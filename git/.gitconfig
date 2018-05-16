@@ -1,0 +1,11 @@
+[core]
+    editor = vim
+[http]
+    proxy = socks5://127.0.0.1:6489
+[https]
+    proxy = socks5://127.0.0.1:6489
+[push]
+    default = matching
+[user]
+    name = sy
+    email = somarl@live.com
