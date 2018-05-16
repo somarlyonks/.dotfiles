@@ -8,5 +8,5 @@
 ## theme
 
 - [jimeh/tmux-themepack](https://github.com/jimeh/tmux-themepack)
-- `source-file "blue.tmuxtheme"`
+- append `source-file "${HOME}/.dotfiles/tmux/blue.tmuxtheme"` to the `.tmux.conf`
 - [License](https://github.com/jimeh/tmux-themepack#license)
