@@ -218,5 +218,6 @@
             "Chartreuse"
         ],
         "Red"
-    ]
+    ],
+    "terminal.integrated.shell.linux": "/bin/zsh",
 }
