@@ -3,3 +3,5 @@
 ## ssh config
 
 In `~/.ssh/config`
+
+## `~/.gitconfig`
