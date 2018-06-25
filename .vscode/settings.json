@@ -1,7 +1,7 @@
 {
     "git.confirmSync": false,
     "files.autoSave": "off",
-    "editor.fontSize": 15,
+    "editor.fontSize": 16,
     "python.venvPath": "/home/sy/.virtualenvs/venv",
     "window.zoomLevel": 0,
     "files.associations": {
@@ -234,5 +234,6 @@
     "gitlens.codeLens.enabled": false,
     "[json]": {
         "editor.tabSize": 2
-    }
+    },
+    "window.menuBarVisibility": "toggle"
 }

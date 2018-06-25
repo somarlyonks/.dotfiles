@@ -1,6 +1,5 @@
 CoenraadS.bracket-pair-colorizer
 DavidAnson.vscode-markdownlint
-PKief.material-icon-theme
 PeterJausovec.vscode-docker
 akamud.vscode-theme-onelight
 azemoh.one-monokai
@@ -13,7 +12,6 @@ eg2.tslint
 faceair.ayu-one-dark
 fisheva.eva-theme
 gio00.fish
-johnpapa.Angular1
 lkytal.coffeelinter
 MariusAlchimavicius.json-to-ts
 mattn.Lisp
@@ -23,7 +21,6 @@ ms-python.python
 ms-vscode.cpptools
 octref.vetur
 perragnaredin.light-plus-tweaked
-plievone.vscode-template-literal-editor
 robertohuertasm.vscode-icons
 wayou.vscode-todo-highlight
 whizkydee.material-palenight-theme
