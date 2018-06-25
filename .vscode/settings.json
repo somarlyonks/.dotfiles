@@ -2,10 +2,12 @@
     "git.confirmSync": false,
     "files.autoSave": "off",
     "editor.fontSize": 15,
+    "python.venvPath": "/home/sy/.virtualenvs/venv",
     "window.zoomLevel": 0,
     "files.associations": {
         "*.vue": "vue",
-        "*.rkt": "clojure"
+        "*.rkt": "lisp",
+        "*.ss": "lisp"
     },
     "git.autofetch": true,
     "editor.insertSpaces": true,
@@ -172,7 +174,6 @@
             "backgroundColor": "darkviolet"
         }
     ],
-    "workbench.colorTheme": "One Monokai",
     "search.exclude": {
         "**/node_modules": true,
         "**/bower_components": true,
@@ -183,7 +184,10 @@
         "MD003": false,
         "MD004": false,
         "MD013": false,
-        "MD034": false
+        "MD024": false,
+        "MD026": false,
+        "MD033": false,
+        "MD034": false,
     },
     "diffEditor.ignoreTrimWhitespace": false,
     "python.linting.mypyArgs": [
@@ -198,15 +202,15 @@
     "editor.tabSize": 4,
     "editor.cursorBlinking": "expand",
     "gitlens.advanced.messages": {
-      "suppressResultsExplorerNotice": true,
-      "suppressShowKeyBindingsNotice": true
+      "suppressFileNotUnderSourceControlWarning": true,
+      "suppressShowKeyBindingsNotice": true,
+      "suppressResultsExplorerNotice": true
     },
     "gitlens.historyExplorer.enabled": true,
     "editor.acceptSuggestionOnEnter": "off",
     "explorer.confirmDragAndDrop": false,
     "typescript.autoImportSuggestions.enabled": false,
     "typescript.tsc.autoDetect": "off",
-    "workbench.iconTheme": "vscode-icons",
     "bracketPairColorizer.consecutivePairColors": [
         "()",
         "[]",
@@ -220,4 +224,15 @@
         "Red"
     ],
     "terminal.integrated.shell.linux": "/bin/zsh",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "One Monokai",
+    "explorer.confirmDelete": false,
+    "python.linting.flake8Args": [
+        "--max-line-length=120"
+    ],
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "[json]": {
+        "editor.tabSize": 2
+    }
 }
