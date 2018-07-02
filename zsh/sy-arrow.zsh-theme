@@ -1,6 +1,5 @@
 if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="blue"; fi
 
-# PROMPT='%{$fg[$NCOLOR]%}%c > %{$reset_color%}'
 PROMPT='%{$fg[$NCOLOR]%}> %{$reset_color%}'
 RPROMPT='%{$fg[$NCOLOR]%}%p $(git_prompt_info)%{$reset_color%}'
 
@@ -10,5 +9,5 @@ ZSH_THEME_GIT_PROMPT_DIRTY="*"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 # See http://geoff.greer.fm/lscolors/
-export LSCOLORS="exfxcxdxbxbxbxbxbxbxbx"
-export LS_COLORS="di=34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=31;40:cd=31;40:su=31;40:sg=31;40:tw=31;40:ow=31;40:"
+export LSCOLORS="exfxcxdxCxegexcxcxbxbx"
+export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=1;32:bd=34;46:cd=34:su=32:sg=32:tw=31:ow=31"
