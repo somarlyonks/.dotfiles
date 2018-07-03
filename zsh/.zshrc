@@ -37,6 +37,10 @@ export LC_CTYPE=en_US.UTF-8
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/sy_id"
+export PROXYCHAINS_SOCKS5=6489
+export http_proxy="http://127.0.0.1:6490"
+export https_proxy=$http_proxy
+export ftp_proxy=$http_proxy
 
 # alias zshconfig="vi ~/.zshrc"
 # alias ohmyzsh="vi ~/.oh-my-zsh"
