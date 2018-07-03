@@ -90,7 +90,7 @@
     ],
     "terminal.integrated.shell.linux": "/bin/zsh",
     "workbench.iconTheme": "vscode-icons",
-    "workbench.colorTheme": "One Monokai",
+    "workbench.colorTheme": "Atom One Light",
     "explorer.confirmDelete": false,
     "python.linting.flake8Args": [
         "--max-line-length=120"
