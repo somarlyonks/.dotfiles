@@ -81,16 +81,22 @@
     "[]",
     "{}",
     [
-      "Dimgray",
-      "Orange",
-      "Indigo",
-      "Darkcyan"
+      // // dark
+      "Azure",
+      "Gold",
+      "Orchid",
+      "Chartreuse"
+      // // light
+      // "Dimgray",
+      // "Orange",
+      // "Indigo",
+      // "Darkcyan"
     ],
     "Red"
   ],
   "terminal.integrated.shell.linux": "/bin/zsh",
   "workbench.iconTheme": "vscode-icons",
-  "workbench.colorTheme": "Atom One Light",
+  "workbench.colorTheme": "Palenight Operator",
   "explorer.confirmDelete": false,
   "python.linting.flake8Args": [
     "--max-line-length=120"
@@ -103,5 +109,6 @@
   "[jsonc]": {
     "editor.tabSize": 2
   },
-  "window.menuBarVisibility": "toggle"
+  "window.menuBarVisibility": "toggle",
+  "editor.fontFamily": "'CamingoCode', 'Droid Sans Fallback'"
 }
