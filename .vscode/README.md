@@ -3,9 +3,9 @@
 ## THEME
 
 - Dark
+  - Palenight
   - One Monokai
   - Dracula Official
-  - Palenight
 - Light
   - Eva
   - Atom One Light
