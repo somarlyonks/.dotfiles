@@ -186,10 +186,6 @@
       "command": "-workbench.action.togglePanel"
   },
   {
-      "key": "ctrl+j",
-      "command": "workbench.action.toggleMaximizedPanel"
-  },
-  {
       "key": "ctrl+=",
       "command": "editor.action.fontZoomIn"
   },
@@ -232,5 +228,207 @@
   {
       "key": "ctrl+numpad0",
       "command": "-workbench.action.zoomReset"
-  }
+  },
+  {
+    "key": "alt+n",
+    "command": "emacs.cursorPageDown",
+    "when": "editorTextFocus && !suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+s",
+    "command": "-actions.find",
+    "when": "!findWidgetVisible"
+  },
+  {
+    "key": "ctrl+s",
+    "command": "-editor.action.nextMatchFindAction",
+    "when": "findWidgetVisible"
+  },
+  // HJKL
+  {
+    "key": "alt+k",
+    "command": "cursorUp",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "alt+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "shift+alt+k",
+    "command": "cursorUpSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+alt+k",
+    "command": "scrollLineUp",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "alt+j",
+    "command": "cursorDown",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "alt+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "shift+alt+j",
+    "command": "cursorDownSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+alt+j",
+    "command": "scrollLineDown",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "alt+h",
+    "command": "cursorLeft",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+alt+h",
+    "command": "cursorLeftSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "alt+l",
+    "command": "cursorRight",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+alt+l",
+    "command": "cursorRightSelect",
+    "when": "textInputFocus"
+  },
+  // af
+  {
+    "key": "alt+a",
+    "command": "cursorHome",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+alt+a",
+    "command": "cursorHomeSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "alt+f",
+    "command": "cursorEnd",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+alt+f",
+    "command": "cursorEndSelect",
+    "when": "textInputFocus"
+  },
+  // sd
+  {
+    "key": "alt+s",
+    "command": "cursorWordStartLeft",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+alt+s",
+    "command": "cursorWordStartLeftSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "alt+d",
+    "command": "cursorWordEndRight",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+alt+d",
+    "command": "cursorWordEndRightSelect",
+    "when": "textInputFocus"
+  },
+  // bn
+  {
+    "key": "alt+b",
+    "command": "cursorPageUp",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "alt+n",
+    "command": "cursorPageDown",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+alt+b",
+    "command": "scrollPageUp",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+alt+n",
+    "command": "scrollPageDown",
+    "when": "textInputFocus"
+  },
+  // g
+  {
+    "key": "alt+g",
+    "command": "editor.action.goToDeclaration",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "shift+alt+g",
+    "command": "editor.action.goToImplementation",
+    "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  // x
+  {
+    "key": "alt+x",
+    "command": "deleteLeft",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+ctrl+x",
+    "command": "deleteWordLeft",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+shift+x",
+    "command": "deleteRight",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+ctrl+shift+x",
+    "command": "deleteWordRight",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  // c
+  {
+    "key": "alt+c",
+    "command": "hideSuggestWidget",
+    "when": "suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "alt+c",
+    "command": "-toggleFindCaseSensitive",
+    "when": "editorFocus"
+  },
+  // o
+  {
+    "key": "alt+o",
+    "command": "editor.action.insertLineAfter",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+shift+o",
+    "command": "editor.action.insertLineBefore",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  // z
+  {
+    "key": "alt+z",
+    "command": "-editor.action.toggleWordWrap"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "-workbench.action.togglePanel"
+  },
 ]
