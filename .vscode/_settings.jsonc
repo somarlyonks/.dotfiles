@@ -1,7 +1,7 @@
 {
   "git.confirmSync": false,
   "files.autoSave": "off",
-  "editor.fontSize": 14,
+  "editor.fontSize": 15,
   "python.venvPath": "/home/sy/.virtualenvs/venv",
   "window.zoomLevel": 0,
   "files.associations": {
@@ -39,18 +39,26 @@
       "backgroundColor": "darkviolet"
     }
   ],
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/*.po": true
+  },
   "search.exclude": {
     "**/node_modules": true,
     "**/bower_components": true,
     "**/static": true
   },
-  "workbench.activityBar.visible": true,
   "markdownlint.config": {
     "MD003": false,
     "MD004": false,
     "MD013": false,
     "MD024": false,
     "MD026": false,
+    "MD028": false,
     "MD033": false,
     "MD034": false,
   },
@@ -81,16 +89,22 @@
     "[]",
     "{}",
     [
-      "Dimgray",
-      "Orange",
-      "Indigo",
-      "Darkcyan"
+      // dark
+      "Azure",
+      "Gold",
+      "Orchid",
+      "Chartreuse"
+      // // light
+      // "Dimgray",
+      // "Orange",
+      // "Indigo",
+      // "Darkcyan"
     ],
     "Red"
   ],
   "terminal.integrated.shell.linux": "/bin/zsh",
   "workbench.iconTheme": "vscode-icons",
-  "workbench.colorTheme": "Atom One Light",
+  "workbench.colorTheme": "Palenight Operator",
   "explorer.confirmDelete": false,
   "python.linting.flake8Args": [
     "--max-line-length=120"
@@ -103,5 +117,43 @@
   "[jsonc]": {
     "editor.tabSize": 2
   },
-  "window.menuBarVisibility": "toggle"
+  "[haskell]": {
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true
+  },
+  "window.menuBarVisibility": "toggle",
+  "editor.fontFamily": "'CamingoCode', 'Droid Sans Fallback'",
+  "go.gopath": "/home/sy/go",
+  "languageServerHaskell.hieExecutablePath": "/home/sy/.local/bin/hie",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "comment",
+          "entity.name.type.class", //class names
+          "keyword", //import, export, return…
+          "constant", //String, Number, Boolean…, this, super
+          "storage.modifier", //static keyword
+          "storage.type.class.js", //class keyword
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          "invalid",
+          "keyword.operator",
+          "constant.numeric.css",
+          "keyword.other.unit.px.css",
+          "constant.numeric.decimal.js",
+          "constant.numeric.json"
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
+  },
+  "window.enableMenuBarMnemonics": false
 }

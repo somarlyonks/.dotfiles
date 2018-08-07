@@ -2,19 +2,13 @@
 
 # Show a quick help summary.
 function usage {
-	echo "Usage: $(basename "$0") [ --dry-run ]";
+	echo "Usage: $(basename "$0")";
 }
 
 # Parse the command-line arguments.
-is_dry_run=false;
-dry_run=;
 target_dir="$HOME";
 while (($#)); do
 	case "$1" in
-		--dry-run)
-			is_dry_run=true;
-			dry_run=echo;
-			;;
 		--help)
 			usage;
 			exit 0;
@@ -30,8 +24,6 @@ while (($#)); do
 	shift;
 done;
 
-$is_dry_run && echo 'Dry run mode. Not actually executing anything.';
-
 # Make sure the target directory is OK.
 if [ -z "$target_dir" ]; then
 	echo "The target directory prefix is empty.";
@@ -44,14 +36,10 @@ elif [ -d "$target_dir" ]; then
 elif [ -e "$target_dir" ]; then
 	echo "$target_dir exists, but is not a writable directory.";
 	exit 1;
-elif ! $dry_run mkdir -p "$target_dir"; then
-	echo "I cannot create a writable directory $target_dir";
-	exit 1;
 fi;
 
 # Determine the absolute path to the source and target directories.
 source_dir="$(cd "$(dirname "$0")" > /dev/null; pwd)";
-$is_dry_run || target_dir="$(cd "$target_dir" > /dev/null; pwd)";
 
 # Create the array of files to symlink.
 source_files=();
@@ -159,7 +147,7 @@ fi;
 
 # Rename the conflicting files.
 for file in "${common_files[@]}"; do
-	$dry_run mv "$target_dir/$file" "$target_dir/$file$backup_suffix";
+	mv "$target_dir/$file" "$target_dir/$file$backup_suffix";
 done;
 
 # Older installations symlinked the entire .bash directory. Now we symlink the
@@ -174,7 +162,7 @@ if [ -d "$bash_dir" -a -L "$bash_dir" ]; then
 		'and recreate it as a directory.';
 	echo "Next, It will create symlinks to all files in directory.";
 	echo;
-	$dry_run mv "$bash_dir" "$bash_dir$backup_suffix";
+	mv "$bash_dir" "$bash_dir$backup_suffix";
 
 	# Add the extra files in .bash to the array of source files to symlink.
 	for bash_file in "$source_dir"/.bash/*; do
@@ -220,7 +208,7 @@ for file in "${source_files[@]}"; do
 	target="$target_dir/$file";
 	target_container_dir="$(dirname "$target")";
 	if ! [ -d "$target_container_dir" ]; then
-		$dry_run mkdir -p "$target_container_dir" || continue;
+		mkdir -p "$target_container_dir" || continue;
 	fi;
 
 	# "src/tilde/.bashrc" rather than "/home/janmoesen/src/tilde/.bashrc" when
@@ -234,7 +222,7 @@ for file in "${source_files[@]}"; do
 	fi;
 	relative_source="$relative_source/$file";
 	if ! [ -L "$target" ]; then
-		$dry_run ln -vs "$relative_source" "$target";
+		ln -vs "$relative_source" "$target";
 		is_linked=true;
 	fi;
 done;

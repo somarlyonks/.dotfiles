@@ -3,16 +3,19 @@
 ## THEME
 
 - Dark
+  - Palenight
   - One Monokai
   - Dracula Official
-  - Ayu One Dark
 - Light
   - Eva
   - Atom One Light
   - Light+ Tweaked
 - Icon
-  - vscode-icons(supports `.rkt`)
-  - Material Icon Theme
+  - vscode-icons
+
+## font
+
+[CamingoCode](https://www.fontsquirrel.com/fonts/camingocode)
 
 ## EXTENSIONS
 
@@ -21,12 +24,3 @@
 - GitLens
 - TODO Highlight
 - Bracket Pair Colorizer
-
-## LANG
-
-- scheme
-  - Racket(Pretty well, not nice enough)
-- Vue
-  - Vetur
-- AngularJS
-  - Angular 1 JavaScript and Typescript Snippets(Angular styleGuide)
