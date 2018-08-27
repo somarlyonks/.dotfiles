@@ -56,3 +56,7 @@ alias curl="noglob curl"
 alias enw="emacs -nw"
 
 alias vi="nvim"
+
+export PATH=$HOME/.pyenv/bin:$PATH
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
