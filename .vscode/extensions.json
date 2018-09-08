@@ -1,24 +1,19 @@
 {
-	// See https://go.microsoft.com/fwlink/?LinkId=827846
-	// for the documentation about the extensions.json format
 	"recommendations": [
 		"CoenraadS.bracket-pair-colorizer",
     "DavidAnson.vscode-markdownlint",
-    "akamud.vscode-theme-onelight",
     "azemoh.one-monokai",
     "dbaeumer.vscode-eslint",
     // "donjayamanne.githistory",
-    "dracula-theme.theme-dracula",
     "eamodio.gitlens",
     "ecmel.vscode-html-css",
     "eg2.tslint",
-    "faceair.ayu-one-dark",
     "fisheva.eva-theme",
-    "MariusAlchimavicius.json-to-ts",
     "mattn.Lisp",
     "mikestead.dotenv",
     "mrmlnc.vscode-scss",
     "ms-python.python",
+    "alanz.vscode-hie-server",
     "ms-vscode.cpptools",
     "octref.vetur",
     "perragnaredin.light-plus-tweaked",

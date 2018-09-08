@@ -1,25 +1,20 @@
 # VS Code
 
-## THEME
+## Theme
 
 - Dark
   - Palenight
   - One Monokai
-  - Dracula Official
 - Light
-  - Eva
-  - Atom One Light
   - Light+ Tweaked
 - Icon
   - vscode-icons
 
-## font
+## Font
 
 [CamingoCode](https://www.fontsquirrel.com/fonts/camingocode)
 
-## EXTENSIONS
-
-[extensions](./extensions)
+## [Extensions](./extensions)
 
 - GitLens
 - TODO Highlight
@@ -27,7 +22,7 @@
 
 ## Environments
 
-If VSCode is running in flatpak, it recommanded to upgrade flatpak to 1.0.0 which has better support for portals with a new tool called `flatpak-spawn`.
+If VSCode is running in flatpak, it recommanded to upgrade flatpak to v1.0.0+ which has better support for portals with a new tool called `flatpak-spawn`.
 
 Run VSCode in host with commands like
 
@@ -40,7 +35,7 @@ Or it's a good practice to alias it with `code`.
 Start the integrated terminal, create a script in the sandbox with
 
 ```bash
-echo "exec flatpak --host zsh" > ~/zsh-spawn.sh
+echo "exec flatpak-spawn --host zsh" > ~/zsh-spawn.sh
 ```
 
 Then link it to an executable file
