@@ -74,15 +74,8 @@
   "editor.detectIndentation": false,
   "editor.tabSize": 4,
   "editor.cursorBlinking": "expand",
-  "gitlens.advanced.messages": {
-    "suppressFileNotUnderSourceControlWarning": true,
-    "suppressShowKeyBindingsNotice": true,
-    "suppressResultsExplorerNotice": true
-  },
-  "gitlens.historyExplorer.enabled": true,
   "editor.acceptSuggestionOnEnter": "off",
   "explorer.confirmDragAndDrop": false,
-  "typescript.autoImportSuggestions.enabled": false,
   "typescript.tsc.autoDetect": "off",
   "bracketPairColorizer.consecutivePairColors": [
     "()",
@@ -109,8 +102,6 @@
   "python.linting.flake8Args": [
     "--max-line-length=120"
   ],
-  "gitlens.codeLens.authors.enabled": false,
-  "gitlens.codeLens.enabled": false,
   "[json]": {
     "editor.tabSize": 2
   },
@@ -417,7 +408,7 @@
     "pickerGroup.foreground": "#00896c",
     "progressBar.background": "#00896c",
     "selection.background": "#00896caa",
-    "settings.modifiedItemForeground": "#f17c67",
+    "settings.modifiedItemIndicator": "#f17c67",
     "sideBar.border": "#103249",
     "sideBar.background": "#102f40",
     "sideBarTitle.foreground": "#00896c",
@@ -466,5 +457,30 @@
   },
   "gitlens.settings.mode": "advanced",
   "gitlens.resultsExplorer.location": "explorer",
-  "workbench.editor.enablePreview": true
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.advanced.messages": {
+    "suppressFileNotUnderSourceControlWarning": true,
+    "suppressShowKeyBindingsNotice": true,
+    "suppressResultsExplorerNotice": true
+  },
+  "gitlens.historyExplorer.enabled": true,
+  // "tslint.trace.server": "messages",
+  "workbench.editor.enablePreview": true,
+  "workbench.settings.editor": "json",
+  "javascript.format.insertSpaceAfterConstructor": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+  "typescript.format.insertSpaceAfterConstructor": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+  "typescript.format.insertSpaceAfterTypeAssertion": true,
+  "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "jsDocCompletion.enabled": false,
+  "vsicons.presets.hideExplorerArrows": true,
+  "markdown.preview.scrollEditorWithPreview": false,
+  "markdown.preview.scrollPreviewWithEditor": false,
+  "material-icon-theme.hidesExplorerArrows": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  // "editor.minimap.enabled": false,
+  // "markdown.styles": [".vscode/markdown.css"],
 }
