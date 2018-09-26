@@ -1,25 +1,20 @@
 # VS Code
 
-## THEME
+## Theme
 
 - Dark
   - Palenight
   - One Monokai
-  - Dracula Official
 - Light
-  - Eva
-  - Atom One Light
   - Light+ Tweaked
 - Icon
   - vscode-icons
 
-## font
+## Font
 
 [CamingoCode](https://www.fontsquirrel.com/fonts/camingocode)
 
-## EXTENSIONS
-
-[extensions](./extensions)
+## [Extensions](./extensions)
 
 - GitLens
 - TODO Highlight
@@ -27,7 +22,7 @@
 
 ## Environments
 
-If VSCode is running in flatpak, it recommanded to upgrade flatpak to 1.0.0 which has better support for portals with a new tool called `flatpak-spawn`.
+If VSCode is running in flatpak, it's recommanded to upgrade flatpak to v1+ which has better support for portals with a new tool called `flatpak-spawn`.
 
 Run VSCode in host with commands like
 
@@ -37,20 +32,37 @@ flatpak run --talk-name=org.freedesktop.Flatpak com.visualstudio.code
 
 Or it's a good practice to alias it with `code`.
 
-Start the integrated terminal, create a script in the sandbox with
+```bash
+echo "alias code=\"flatpak run --talk-name=org.freedesktop.Flatpak com.visualstudio.code\"" | tee -a ~/.zshrc
+source ~/.zshrc
+```
+
+Create a script under home directory with
 
 ```bash
-echo "exec flatpak --host zsh" > ~/zsh-spawn.sh
+echo "exec flatpak-spawn --host zsh" > ~/.zsh_spawn.sh
 ```
 
 Then link it to an executable file
 
 ```bash
 
-ln -s ~/zsh-spawn.sh ~/zsh-spawn
-chmod u+x ~/zsh-spawn
+ln -s ~/zsh-spawn.sh ~/.zsh_spawn
+chmod u+x ~/.zsh_spawn
 ```
 
-And in VSCode, edit the setting `terminal.integrated.shell.linux` to `/home/<username>/zsh-spawn`. Then, the integrated terminal will work just like native konsole /gnome-terminal.
+And in VSCode, edit the setting `terminal.integrated.shell.linux` to `/home/<username>/.zsh_spawn`. Then, the integrated terminal will work just like native konsole/gnome-terminal.
 
-These worked fine in Manjaro17 + flatpak v1.0.1 + vscode v1.27.1
+### tested environment:
+
+  Manjaro 17.1.12
+
+  x86_64 kernel 4.14.67-1
+
+  flatpak v1.0.1
+
+  vscode v1.27.1
+
+### found problems
+
+There appears a readline problem and backspace/left/right etc may not work as supposed in zsh but work in bash.

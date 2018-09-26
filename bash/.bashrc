@@ -41,9 +41,13 @@ case "$TERM" in
 esac
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    if [ $(id -u) -eq 0 ]; then # you are root, set red colour prompt
+        PS1="\[\e[31m\]>\[\e[m\] "
+    else # normal
+        PS1="\[\e[34m\]>\[\e[m\] "
+    fi
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\W\$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -75,8 +79,6 @@ fi
 #   fi
 # fi
 
-export PS1="sy@dem:\[\033[01;34m\]\W\[\033[00m\] > "
-
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 source /usr/local/bin/virtualenvwrapper.sh
@@ -90,9 +92,11 @@ export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 export PATH=${JAVA_HOME}/bin:$PATH
 
 # thefuck
-#eval $(thefuck --alias)
+# eval $(thefuck --alias)
 
 # Launch FISH
 # if [ -t 1 ]; then
 # 	exec fish
 # fi
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

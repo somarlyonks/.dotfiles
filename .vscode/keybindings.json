@@ -431,4 +431,20 @@
     "key": "ctrl+j",
     "command": "-workbench.action.togglePanel"
   },
+  {
+    "key": "ctrl+alt+q",
+    "command": "workbench.action.quit"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "-workbench.action.quit"
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "-workbench.action.tasks.build"
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "breadcrumbs.toggle"
+  },
 ]
