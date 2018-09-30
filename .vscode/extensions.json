@@ -2,15 +2,15 @@
 	"recommendations": [
 		"CoenraadS.bracket-pair-colorizer",
     "DavidAnson.vscode-markdownlint",
-    "azemoh.one-monokai",
+    // "azemoh.one-monokai",
     "dbaeumer.vscode-eslint",
     // "donjayamanne.githistory",
     "eamodio.gitlens",
-    "ecmel.vscode-html-css",
+    // "ecmel.vscode-html-css",
     "eg2.tslint",
     "mattn.Lisp",
     "mikestead.dotenv",
-    "mrmlnc.vscode-scss",
+    // "mrmlnc.vscode-scss",
     "ms-python.python",
     "alanz.vscode-hie-server",
     "ms-vscode.cpptools",
@@ -18,8 +18,9 @@
     "perragnaredin.light-plus-tweaked",
     "robertohuertasm.vscode-icons",
     "wayou.vscode-todo-highlight",
-    "whizkydee.material-palenight-theme",
+    // "whizkydee.material-palenight-theme",
+    // "zamerick.black-ocean",
     "ybaumes.highlight-trailing-white-spaces",
-    "zamerick.black-ocean"
+    "sy.syme"
 	]
 }
