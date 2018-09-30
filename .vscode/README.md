@@ -3,8 +3,7 @@
 ## Theme
 
 - Dark
-  - Palenight
-  - One Monokai
+  - syme
 - Light
   - Light+ Tweaked
 - Icon
