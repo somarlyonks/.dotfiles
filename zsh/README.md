@@ -2,6 +2,14 @@
 
 It's actually prepared for VSCode's terminal.
 
+## Plugins
+
+Oh-my-zsh
+
+[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md)
+
+[zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
+
 ## Theme
 
 A modified minimalist [arrow.zsh-theme](https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/arrow.zsh-theme) original from [oh-my-zsh](http://ohmyz.sh/).
