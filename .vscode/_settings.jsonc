@@ -6,9 +6,9 @@
   "window.zoomLevel": 0,
   "files.associations": {
     "*.vue": "vue",
-    "*.ml": "ocaml",
     "*.rkt": "lisp",
-    "*.ss": "lisp"
+    "*.ss": "lisp",
+    "*.ml": "ocaml"
   },
   "git.autofetch": true,
   "editor.insertSpaces": true,
@@ -46,7 +46,9 @@
     "**/.hg": true,
     "**/CVS": true,
     "**/.DS_Store": true,
-    "**/*.po": true
+    "**/*.po": true,
+    "**/*.ibc": true,
+    "**/*.pyc": true
   },
   "search.exclude": {
     "**/node_modules": true,
@@ -98,7 +100,6 @@
   ],
   "terminal.integrated.shell.linux": "/bin/zsh",
   "workbench.iconTheme": "vscode-icons",
-  "workbench.colorTheme": "syme",
   "explorer.confirmDelete": false,
   "python.linting.flake8Args": [
     "--max-line-length=120"
@@ -117,8 +118,12 @@
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true
   },
+  "[idris]": {
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true
+  },
   "window.menuBarVisibility": "toggle",
-  "editor.fontFamily": "'CamingoCode', 'Droid Sans Fallback'",
+  "editor.fontFamily": "CamingoCode, 'Droid Sans Fallback'",
   // "go.gopath": "/home/sy/go",
   "languageServerHaskell.hieExecutablePath": "/home/sy/.local/bin/hie",
   "breadcrumbs.enabled": false,
@@ -153,4 +158,9 @@
   "vsicons.dontShowNewVersionMessage": true,
   // "editor.minimap.enabled": false,
   // "markdown.styles": [".vscode/markdown.css"],
+  "powermode.enabled": true,
+  "powermode.enableShake": false,
+  "powermode.enableStatusBarComboTimer": false,
+  "powermode.enableStatusBarComboCounter": false,
+  "workbench.colorTheme": "syme",
 }
