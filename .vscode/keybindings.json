@@ -447,4 +447,75 @@
     "key": "ctrl+shift+b",
     "command": "breadcrumbs.toggle"
   },
+  {
+    "key": "ctrl+alt+a",
+    "command": "idris.add-clause"
+  },
+  {
+    "key": "ctrl+alt+c",
+    "command": "-copyFilePath",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+c",
+    "command": "-copyRelativeFilePath",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "ctrl+alt+c",
+    "command": "-search.action.copyPath",
+    "when": "fileMatchOrFolderMatchFocus"
+  },
+  {
+    "key": "ctrl+alt+c",
+    "command": "idris.case-split"
+  },
+  {
+    "key": "ctrl+alt+l",
+    "command": "idris.make-lemma"
+  },
+  {
+    "key": "ctrl+alt+t",
+    "command": "-hie.commands.showType",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+y",
+    "command": "idris.proof-search"
+  },
+  {
+    "key": "alt+w",
+    "command": "-gitlens.diffLineWithWorking",
+    "when": "editorTextFocus && gitlens:keymap == 'alternate' && gitlens:activeFileStatus =~ /tracked/"
+  },
+  {
+    "key": "alt+w",
+    "command": "-workbench.action.terminal.toggleFindWholeWord",
+    "when": "terminalFindWidgetFocused"
+  },
+  {
+    "key": "alt+w",
+    "command": "-workbench.action.terminal.toggleFindWholeWordTerminalFocus",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "alt+w",
+    "command": "-toggleFindWholeWord",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+w",
+    "command": "-toggleSearchWholeWord",
+    "when": "searchViewletFocus && searchViewletVisible"
+  },
+  {
+    "key": "shift+alt+w",
+    "command": "-gitlens.diffWithWorking",
+    "when": "editorTextFocus && gitlens:keymap == 'alternate' && gitlens:activeFileStatus =~ /tracked/"
+  },
+  {
+    "key": "alt+w",
+    "command": "deleteWordLeft",
+    "when": "textInputFocus && !editorReadonly"
+  },
 ]

@@ -11,11 +11,14 @@
 
 ## Font
 
-[CamingoCode](https://www.fontsquirrel.com/fonts/camingocode)
+[CamingoCode](https://www.fontsquirrel.com/fonts/camingocode) for JS/TS
+
+[FiraCode](https://github.com/tonsky/FiraCode) for functional PLs like Haskell/OCaml/Idris
 
 ## [Extensions](./extensions)
 
 - GitLens
+- Power Mode
 - TODO Highlight
 - Bracket Pair Colorizer
 
@@ -64,4 +67,4 @@ And in VSCode, edit the setting `terminal.integrated.shell.linux` to `/home/<use
 
 ### found problems
 
-There appears a readline problem and backspace/left/right etc may not work as supposed in zsh but work in bash.
+There appears a readline problem and backspace/left/right .etc may not work as expected in zsh but work in bash.
