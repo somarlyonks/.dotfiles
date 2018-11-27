@@ -1,4 +1,3 @@
-// 将键绑定放入此文件中以覆盖默认值
 [
   {
       "key": "ctrl+q",
@@ -517,5 +516,9 @@
     "key": "alt+w",
     "command": "deleteWordLeft",
     "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+q",
+    "command": "workbench.action.toggleActivityBarVisibility"
   },
 ]
