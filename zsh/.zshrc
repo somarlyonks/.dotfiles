@@ -46,7 +46,7 @@ export PYTHONSTARTUP=$HOME/.pythonrc.py
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-export SSH_KEY_PATH="~/.ssh/sy_id"
+export SSH_KEY_PATH="~/.ssh/id_sy"
 
 alias zshconfig="vi ~/.zshrc"
 alias ohmyzsh="vi ~/.oh-my-zsh"
