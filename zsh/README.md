@@ -16,6 +16,10 @@ A modified minimalist [arrow.zsh-theme](https://github.com/robbyrussell/oh-my-zs
 
 ## chectsheet
 
+### cli shortcuts
+
+ctrl + u: delete all
+
 ### git shortcuts
 
 | Alias | command |

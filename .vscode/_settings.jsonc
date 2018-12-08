@@ -48,7 +48,8 @@
     "**/.DS_Store": true,
     "**/*.po": true,
     "**/*.ibc": true,
-    "**/*.pyc": true
+    "**/*.pyc": true,
+    "**/__pycache__": true,
   },
   "search.exclude": {
     "**/node_modules": true,
@@ -163,4 +164,12 @@
   "powermode.enableStatusBarComboTimer": false,
   "powermode.enableStatusBarComboCounter": false,
   "workbench.colorTheme": "syme",
+  "terminal.integrated.rendererType": "dom",
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.colorCustomizations": {
+    "tab.activeModifiedBorder": "#00896c",
+    "tab.inactiveModifiedBorder": "#00896c66",
+    "tab.unfocusedActiveModifiedBorder": "#00896c66",
+    "tab.unfocusedInactiveModifiedBorder": "#00896c66"
+  }
 }
