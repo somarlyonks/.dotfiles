@@ -1,232 +1,287 @@
 [
+  // q
   {
-      "key": "ctrl+q",
-      "command": "workbench.action.toggleSidebarVisibility"
+    "key": "ctrl+q",
+    "command": "workbench.action.toggleSidebarVisibility"
   },
   {
-      "key": "ctrl+b",
-      "command": "-workbench.action.toggleSidebarVisibility"
+    "key": "ctrl+b",
+    "command": "-workbench.action.toggleSidebarVisibility"
   },
   {
-      "key": "ctrl+shift+/",
-      "command": "editor.action.triggerParameterHints",
-      "when": "editorHasSignatureHelpProvider && editorTextFocus"
+    "key": "ctrl+shift+q",
+    "command": "workbench.action.toggleActivityBarVisibility"
   },
   {
-      "key": "ctrl+shift+space",
-      "command": "-editor.action.triggerParameterHints",
-      "when": "editorHasSignatureHelpProvider && editorTextFocus"
+    "key": "ctrl+alt+q",
+    "command": "workbench.action.quit"
   },
   {
-      "key": "ctrl+shift+f",
-      "command": "keybindings.editor.searchKeybindings",
-      "when": "inKeybindings && keybindingFocus"
+    "key": "ctrl+q",
+    "command": "-workbench.action.quit"
+  },
+  // w
+  {
+    "key": "alt+w",
+    "command": "-gitlens.diffLineWithWorking",
+    "when": "editorTextFocus && gitlens:keymap == 'alternate' && gitlens:activeFileStatus =~ /tracked/"
   },
   {
-      "key": "ctrl+f",
-      "command": "-keybindings.editor.searchKeybindings",
-      "when": "inKeybindings && keybindingFocus"
+    "key": "alt+w",
+    "command": "-gitlens.diffLineWithWorking",
+    "when": "editorTextFocus && gitlens:activeIsTracked && gitlens:keymap == 'alternate'"
   },
   {
-      "key": "ctrl+f",
-      "command": "workbench.view.search",
-      "when": "!editorFocus && !searchViewletVisible"
+    "key": "shift+alt+w",
+    "command": "-gitlens.diffWithWorking",
+    "when": "editorTextFocus && gitlens:activeIsTracked && gitlens:keymap == 'alternate'"
   },
   {
-      "key": "ctrl+shift+f",
-      "command": "-workbench.view.search",
-      "when": "!editorFocus && !searchViewletVisible"
+    "key": "alt+w",
+    "command": "-workbench.action.terminal.toggleFindWholeWord",
+    "when": "terminalFindWidgetFocused"
   },
   {
-      "key": "capslock",
-      "command": "extension.vim_tab",
-      "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+    "key": "alt+w",
+    "command": "-workbench.action.terminal.toggleFindWholeWordTerminalFocus",
+    "when": "terminalFocus"
   },
   {
-      "key": "tab",
-      "command": "-extension.vim_tab",
-      "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+    "key": "alt+w",
+    "command": "-toggleFindWholeWord",
+    "when": "editorFocus"
   },
   {
-      "key": "ctrl+enter",
-      "command": "-python.execSelectionInTerminal",
-      "when": "editorFocus && editorHasSelection && editorLangId == 'python'"
+    "key": "alt+w",
+    "command": "-toggleSearchWholeWord",
+    "when": "searchViewletFocus && searchViewletVisible"
   },
   {
-      "key": "ctrl+shift+z",
-      "command": "-redo",
-      "when": "textInputFocus && !editorReadonly"
+    "key": "shift+alt+w",
+    "command": "-gitlens.diffWithWorking",
+    "when": "editorTextFocus && gitlens:keymap == 'alternate' && gitlens:activeFileStatus =~ /tracked/"
   },
   {
-      "key": "ctrl+shift+g shift+,",
-      "command": "-gitlens.diffLineWithPrevious",
-      "when": "editorTextFocus && gitlens:activeIsTracked && gitlens:keymap == 'chorded'"
+    "key": "ctrl+shift+g shift+w",
+    "command": "-gitlens.diffWithWorking",
+    "when": "editorTextFocus && gitlens:activeIsTracked && gitlens:keymap == 'chorded'"
   },
   {
-      "key": "shift+alt+,",
-      "command": "-gitlens.diffLineWithPrevious",
-      "when": "editorTextFocus && gitlens:activeIsTracked && gitlens:keymap == 'alternate'"
+    "key": "alt+w",
+    "command": "deleteWordLeft",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  // e
+  {
+    "key": "alt+e",
+    "command": "deleteWordRight",
+    "when": "textInputFocus && !editorReadonly"
   },
   {
-      "key": "ctrl+shift+g w",
-      "command": "-gitlens.diffLineWithWorking",
-      "when": "editorTextFocus && gitlens:activeIsTracked && gitlens:keymap == 'chorded'"
+    "key": "ctrl+shift+/",
+    "command": "editor.action.triggerParameterHints",
+    "when": "editorHasSignatureHelpProvider && editorTextFocus"
   },
   {
-      "key": "alt+w",
-      "command": "-gitlens.diffLineWithWorking",
-      "when": "editorTextFocus && gitlens:activeIsTracked && gitlens:keymap == 'alternate'"
+    "key": "ctrl+shift+space",
+    "command": "-editor.action.triggerParameterHints",
+    "when": "editorHasSignatureHelpProvider && editorTextFocus"
   },
   {
-      "key": "ctrl+shift+g .",
-      "command": "-gitlens.diffWithNext",
-      "when": "editorTextFocus && gitlens:activeIsTracked && gitlens:keymap == 'chorded'"
+    "key": "ctrl+shift+f",
+    "command": "keybindings.editor.searchKeybindings",
+    "when": "inKeybindings && keybindingFocus"
   },
   {
-      "key": "alt+.",
-      "command": "-gitlens.diffWithNext",
-      "when": "editorTextFocus && gitlens:activeIsTracked && gitlens:keymap == 'alternate'"
+    "key": "ctrl+f",
+    "command": "-keybindings.editor.searchKeybindings",
+    "when": "inKeybindings && keybindingFocus"
   },
   {
-      "key": "alt+,",
-      "command": "-gitlens.diffWithPrevious",
-      "when": "editorTextFocus && gitlens:activeIsTracked && !isInDiffEditor && gitlens:keymap == 'alternate'"
+    "key": "ctrl+f",
+    "command": "workbench.view.search",
+    "when": "!editorFocus && !searchViewletVisible"
   },
   {
-      "key": "ctrl+shift+g ,",
-      "command": "-gitlens.diffWithPreviousInDiff",
-      "when": "gitlens:activeIsTracked && isInDiffEditor && gitlens:keymap == 'chorded'"
+    "key": "ctrl+shift+f",
+    "command": "-workbench.view.search",
+    "when": "!editorFocus && !searchViewletVisible"
   },
   {
-      "key": "ctrl+shift+g ,",
-      "command": "-gitlens.diffWithPrevious",
-      "when": "editorTextFocus && gitlens:activeIsTracked && !isInDiffEditor && gitlens:keymap == 'chorded'"
+    "key": "capslock",
+    "command": "extension.vim_tab",
+    "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
   },
   {
-      "key": "alt+,",
-      "command": "-gitlens.diffWithPreviousInDiff",
-      "when": "gitlens:activeIsTracked && isInDiffEditor && gitlens:keymap == 'alternate'"
+    "key": "tab",
+    "command": "-extension.vim_tab",
+    "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
   },
   {
-      "key": "ctrl+shift+g shift+w",
-      "command": "-gitlens.diffWithWorking",
-      "when": "editorTextFocus && gitlens:activeIsTracked && gitlens:keymap == 'chorded'"
+    "key": "ctrl+enter",
+    "command": "-python.execSelectionInTerminal",
+    "when": "editorFocus && editorHasSelection && editorLangId == 'python'"
   },
   {
-      "key": "shift+alt+w",
-      "command": "-gitlens.diffWithWorking",
-      "when": "editorTextFocus && gitlens:activeIsTracked && gitlens:keymap == 'alternate'"
+    "key": "ctrl+shift+z",
+    "command": "-redo",
+    "when": "textInputFocus && !editorReadonly"
   },
   {
-      "key": "shift+alt+up",
-      "command": "-editor.action.insertCursorAbove",
-      "when": "editorTextFocus"
+    "key": "ctrl+shift+g shift+,",
+    "command": "-gitlens.diffLineWithPrevious",
+    "when": "editorTextFocus && gitlens:activeIsTracked && gitlens:keymap == 'chorded'"
   },
   {
-      "key": "shift+alt+down",
-      "command": "-editor.action.insertCursorBelow",
-      "when": "editorTextFocus"
+    "key": "shift+alt+,",
+    "command": "-gitlens.diffLineWithPrevious",
+    "when": "editorTextFocus && gitlens:activeIsTracked && gitlens:keymap == 'alternate'"
   },
   {
-      "key": "shift+alt+i",
-      "command": "-editor.action.insertCursorAtEndOfEachLineSelected",
-      "when": "editorTextFocus"
+    "key": "ctrl+shift+g w",
+    "command": "-gitlens.diffLineWithWorking",
+    "when": "editorTextFocus && gitlens:activeIsTracked && gitlens:keymap == 'chorded'"
   },
   {
-      "key": "ctrl+k ctrl+c",
-      "command": "-editor.action.addCommentLine",
-      "when": "editorTextFocus && !editorReadonly"
+    "key": "ctrl+shift+g .",
+    "command": "-gitlens.diffWithNext",
+    "when": "editorTextFocus && gitlens:activeIsTracked && gitlens:keymap == 'chorded'"
   },
   {
-      "key": "ctrl+shift+i",
-      "command": "-editor.action.formatDocument",
-      "when": "editorTextFocus && !editorReadonly"
+    "key": "alt+.",
+    "command": "-gitlens.diffWithNext",
+    "when": "editorTextFocus && gitlens:activeIsTracked && gitlens:keymap == 'alternate'"
   },
   {
-      "key": "ctrl+alt+=",
-      "command": "workbench.action.navigateForward"
+    "key": "alt+,",
+    "command": "-gitlens.diffWithPrevious",
+    "when": "editorTextFocus && gitlens:activeIsTracked && !isInDiffEditor && gitlens:keymap == 'alternate'"
   },
   {
-      "key": "ctrl+shift+-",
-      "command": "-workbench.action.navigateForward"
+    "key": "ctrl+shift+g ,",
+    "command": "-gitlens.diffWithPreviousInDiff",
+    "when": "gitlens:activeIsTracked && isInDiffEditor && gitlens:keymap == 'chorded'"
   },
   {
-      "key": "shift+f7",
-      "command": "-editor.action.diffReview.prev",
-      "when": "isInDiffEditor"
+    "key": "ctrl+shift+g ,",
+    "command": "-gitlens.diffWithPrevious",
+    "when": "editorTextFocus && gitlens:activeIsTracked && !isInDiffEditor && gitlens:keymap == 'chorded'"
   },
   {
-      "key": "f7",
-      "command": "-editor.action.wordHighlight.next",
-      "when": "editorTextFocus && hasWordHighlights"
+    "key": "alt+,",
+    "command": "-gitlens.diffWithPreviousInDiff",
+    "when": "gitlens:activeIsTracked && isInDiffEditor && gitlens:keymap == 'alternate'"
   },
   {
-      "key": "shift+f7",
-      "command": "-editor.action.wordHighlight.prev",
-      "when": "editorTextFocus && hasWordHighlights"
+    "key": "shift+alt+up",
+    "command": "-editor.action.insertCursorAbove",
+    "when": "editorTextFocus"
   },
   {
-      "key": "shift+escape",
-      "command": "-workbench.action.terminal.hideFindWidget",
-      "when": "terminalFindWidgetVisible && terminalFocus"
+    "key": "shift+alt+down",
+    "command": "-editor.action.insertCursorBelow",
+    "when": "editorTextFocus"
   },
   {
-      "key": "down",
-      "command": "-repl.action.historyNext",
-      "when": "inDebugRepl && onLastDebugReplLine"
+    "key": "shift+alt+i",
+    "command": "-editor.action.insertCursorAtEndOfEachLineSelected",
+    "when": "editorTextFocus"
   },
   {
-      "key": "up",
-      "command": "-repl.action.historyPrevious",
-      "when": "inDebugRepl && onFirstDebugReplLine"
+    "key": "ctrl+k ctrl+c",
+    "command": "-editor.action.addCommentLine",
+    "when": "editorTextFocus && !editorReadonly"
   },
   {
-      "key": "ctrl+j",
-      "command": "-workbench.action.togglePanel"
+    "key": "ctrl+shift+i",
+    "command": "-editor.action.formatDocument",
+    "when": "editorTextFocus && !editorReadonly"
   },
   {
-      "key": "ctrl+=",
-      "command": "editor.action.fontZoomIn"
+    "key": "ctrl+alt+=",
+    "command": "workbench.action.navigateForward"
   },
   {
-      "key": "ctrl+-",
-      "command": "-workbench.action.zoomOut"
+    "key": "ctrl+shift+-",
+    "command": "-workbench.action.navigateForward"
   },
   {
-      "key": "ctrl+numpad_subtract",
-      "command": "-workbench.action.zoomOut"
+    "key": "shift+f7",
+    "command": "-editor.action.diffReview.prev",
+    "when": "isInDiffEditor"
   },
   {
-      "key": "ctrl+=",
-      "command": "-workbench.action.zoomIn"
+    "key": "f7",
+    "command": "-editor.action.wordHighlight.next",
+    "when": "editorTextFocus && hasWordHighlights"
+  },
+  {
+    "key": "shift+f7",
+    "command": "-editor.action.wordHighlight.prev",
+    "when": "editorTextFocus && hasWordHighlights"
+  },
+  {
+    "key": "shift+escape",
+    "command": "-workbench.action.terminal.hideFindWidget",
+    "when": "terminalFindWidgetVisible && terminalFocus"
+  },
+  {
+    "key": "down",
+    "command": "-repl.action.historyNext",
+    "when": "inDebugRepl && onLastDebugReplLine"
+  },
+  {
+    "key": "up",
+    "command": "-repl.action.historyPrevious",
+    "when": "inDebugRepl && onFirstDebugReplLine"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "-workbench.action.togglePanel"
+  },
+  {
+    "key": "ctrl+=",
+    "command": "editor.action.fontZoomIn"
+  },
+  {
+    "key": "ctrl+-",
+    "command": "-workbench.action.zoomOut"
+  },
+  {
+    "key": "ctrl+numpad_subtract",
+    "command": "-workbench.action.zoomOut"
+  },
+  {
+    "key": "ctrl+=",
+    "command": "-workbench.action.zoomIn"
   },
   // {
   //     "key": "ctrl+shift+=",
   //     "command": "workbench.action.zoomIn"
   // },
   {
-      "key": "ctrl+shift+-",
-      "command": "workbench.action.zoomOut"
+    "key": "ctrl+shift+-",
+    "command": "workbench.action.zoomOut"
   },
   {
-      "key": "ctrl+numpad_add",
-      "command": "-workbench.action.zoomIn"
+    "key": "ctrl+numpad_add",
+    "command": "-workbench.action.zoomIn"
   },
   {
-      "key": "ctrl+-",
-      "command": "editor.action.fontZoomOut"
+    "key": "ctrl+-",
+    "command": "editor.action.fontZoomOut"
   },
   {
-      "key": "ctrl+0",
-      "command": "-workbench.action.focusSideBar"
+    "key": "ctrl+0",
+    "command": "-workbench.action.focusSideBar"
   },
   {
-      "key": "ctrl+0",
-      "command": "editor.action.fontZoomReset"
+    "key": "ctrl+0",
+    "command": "editor.action.fontZoomReset"
   },
   {
-      "key": "ctrl+numpad0",
-      "command": "-workbench.action.zoomReset"
+    "key": "ctrl+numpad0",
+    "command": "-workbench.action.zoomReset"
   },
   {
     "key": "alt+n",
@@ -378,78 +433,23 @@
     "command": "editor.action.goToImplementation",
     "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
   },
-  // x
-  {
-    "key": "alt+x",
-    "command": "deleteLeft",
-    "when": "textInputFocus && !editorReadonly"
-  },
-  {
-    "key": "alt+ctrl+x",
-    "command": "deleteWordLeft",
-    "when": "textInputFocus && !editorReadonly"
-  },
-  {
-    "key": "alt+shift+x",
-    "command": "deleteRight",
-    "when": "textInputFocus && !editorReadonly"
-  },
-  {
-    "key": "alt+ctrl+shift+x",
-    "command": "deleteWordRight",
-    "when": "textInputFocus && !editorReadonly"
-  },
-  // c
-  {
-    "key": "alt+c",
-    "command": "hideSuggestWidget",
-    "when": "suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "alt+c",
-    "command": "-toggleFindCaseSensitive",
-    "when": "editorFocus"
-  },
-  // o
-  {
-    "key": "alt+o",
-    "command": "editor.action.insertLineAfter",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "alt+shift+o",
-    "command": "editor.action.insertLineBefore",
-    "when": "editorTextFocus && !editorReadonly"
-  },
   // z
   {
     "key": "alt+z",
     "command": "-editor.action.toggleWordWrap"
   },
   {
-    "key": "ctrl+j",
-    "command": "-workbench.action.togglePanel"
+    "key": "alt+z",
+    "command": "deleteAllLeft",
+    "when": "editorTextFocus && !editorReadonly"
   },
+  // x
   {
-    "key": "ctrl+alt+q",
-    "command": "workbench.action.quit"
+    "key": "alt+x",
+    "command": "deleteLeft",
+    "when": "textInputFocus && !editorReadonly"
   },
-  {
-    "key": "ctrl+q",
-    "command": "-workbench.action.quit"
-  },
-  {
-    "key": "ctrl+shift+b",
-    "command": "-workbench.action.tasks.build"
-  },
-  {
-    "key": "ctrl+shift+b",
-    "command": "breadcrumbs.toggle"
-  },
-  {
-    "key": "ctrl+alt+a",
-    "command": "idris.add-clause"
-  },
+  // c
   {
     "key": "ctrl+alt+c",
     "command": "-copyFilePath",
@@ -470,6 +470,54 @@
     "command": "idris.case-split"
   },
   {
+    "key": "alt+c",
+    "command": "hideSuggestWidget",
+    "when": "suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "alt+c",
+    "command": "-toggleFindCaseSensitive",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+c",
+    "command": "deleteRight",
+    "when": "textInputFocus && !editorReadonly && !suggestWidgetVisible"
+  },
+  // v
+  {
+    "key": "alt+v",
+    "command": "deleteAllRight",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  // o
+  {
+    "key": "alt+o",
+    "command": "editor.action.insertLineAfter",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+shift+o",
+    "command": "editor.action.insertLineBefore",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "-workbench.action.togglePanel"
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "-workbench.action.tasks.build"
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "breadcrumbs.toggle"
+  },
+  {
+    "key": "ctrl+alt+a",
+    "command": "idris.add-clause"
+  },
+  {
     "key": "ctrl+alt+l",
     "command": "idris.make-lemma"
   },
@@ -481,44 +529,5 @@
   {
     "key": "ctrl+alt+y",
     "command": "idris.proof-search"
-  },
-  {
-    "key": "alt+w",
-    "command": "-gitlens.diffLineWithWorking",
-    "when": "editorTextFocus && gitlens:keymap == 'alternate' && gitlens:activeFileStatus =~ /tracked/"
-  },
-  {
-    "key": "alt+w",
-    "command": "-workbench.action.terminal.toggleFindWholeWord",
-    "when": "terminalFindWidgetFocused"
-  },
-  {
-    "key": "alt+w",
-    "command": "-workbench.action.terminal.toggleFindWholeWordTerminalFocus",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "alt+w",
-    "command": "-toggleFindWholeWord",
-    "when": "editorFocus"
-  },
-  {
-    "key": "alt+w",
-    "command": "-toggleSearchWholeWord",
-    "when": "searchViewletFocus && searchViewletVisible"
-  },
-  {
-    "key": "shift+alt+w",
-    "command": "-gitlens.diffWithWorking",
-    "when": "editorTextFocus && gitlens:keymap == 'alternate' && gitlens:activeFileStatus =~ /tracked/"
-  },
-  {
-    "key": "alt+w",
-    "command": "deleteWordLeft",
-    "when": "textInputFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+shift+q",
-    "command": "workbench.action.toggleActivityBarVisibility"
   },
 ]
