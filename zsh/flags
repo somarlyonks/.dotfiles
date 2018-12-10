@@ -1,0 +1,218 @@
+%%     A `%'.
+
+%)     A `)'.
+
+%d
+%/     Present  working  directory  ($PWD).  If an integer
+	  follows the `%', it specifies a number of  trailing
+	  components  of  $PWD  to show; zero means the whole
+	  path.  A negative integer specifies leading  compo-
+	  nents, i.e. %-1d specifies the first component.
+
+%~     As  %d and %/, but if $PWD has a named directory as
+	  its prefix, that part is replaced by a `~' followed
+	  by  the  name  of the directory.  If it starts with
+	  $HOME, that part is replaced by a `~'.
+
+%h
+%!     Current history event number.
+
+%L     The current value of $SHLVL.
+
+%M     The full machine hostname.
+
+%m     The hostname up to the first `.'.  An  integer  may
+	  follow  the  `%'  to specify how many components of
+	  the hostname are desired.  With a negative integer,
+	  trailing components of the hostname are shown.
+
+%S (%s)
+	  Start (stop) standout mode.
+
+%U (%u)
+	  Start (stop) underline mode.
+
+%B (%b)
+	  Start (stop) boldface mode.
+
+%t
+%@     Current time of day, in 12-hour, am/pm format.
+
+%T     Current time of day, in 24-hour format.
+
+%*     Current  time  of  day in 24-hour format, with sec-
+	  onds.
+
+%n     $USERNAME.
+
+%N     The name of the  script,  sourced  file,  or  shell
+	  function that zsh is currently executing, whichever
+	  was started most recently.  If there is none,  this
+	  is  equivalent to the parameter $0.  An integer may
+	  follow the `%' to specify a number of trailing path
+	  components  to  show;  zero means the full path.  A
+	  negative integer specifies leading components.
+
+%i     The line number currently  being  executed  in  the
+	  script,  sourced  file,  or shell function given by
+	  %N.  This is most useful for debugging as  part  of
+	  $PS4.
+
+%w     The date in day-dd format.
+
+%W     The date in mm/dd/yy format.
+
+%D     The date in yy-mm-dd format.
+
+%D{string}
+	  string  is  formatted  using the strftime function.
+	  See strftime(3) for more details.  Three additional
+	  codes  are  available:   %f  prints  the day of the
+	  month, like %e but without any preceding  space  if
+	  the  day is a single digit, and %K/%L correspond to
+	  %k/%l for the hour of the day (24/12 hour clock) in
+	  the same way.
+
+%l     The  line  (tty)  the  user is logged in on without
+	  /dev/ prefix.  If name starts with /dev/tty this is
+	  stripped.
+
+%y     The  line  (tty)  the  user is logged in on without
+	  /dev/ prefix.  It does  not  treat  /dev/tty*  spe-
+	  cially.
+
+%?     The  return  code of the last command executed just
+	  before the prompt.
+
+%_     The status of the parser, i.e. the shell constructs
+	  (like `if' and `for') that have been started on the
+	  command line. If given an integer number that  many
+	  strings  will  be  printed;  zero or negative or no
+	  integer means print as many as there are.  This  is
+	  most  useful  in prompts PS2 for continuation lines
+	  and PS4 for debugging with the  XTRACE  option;  in
+	  the  latter  case  it  will  also work non-interac-
+	  tively.
+
+%E     Clears to end of line.
+
+%#     A `#' if the shell is running  with  privileges,  a
+	  `%'  if not.  Equivalent to `%(!.#.%%)'.  The defi-
+	  nition of `privileged', for these purposes, is that
+	  either  the  effective  user  ID  is  zero,  or, if
+	  POSIX.1e capabilities are supported, that at  least
+	  one capability is raised in either the Effective or
+	  Inheritable capability vectors.
+
+%v     The value of the first element of the  psvar  array
+	  parameter.  Following the `%' with an integer gives
+	  that element of the array.  Negative integers count
+	  from the end of the array.
+
+%{...%}
+	  Include a string as a literal escape sequence.  The
+	  string within the braces should not change the cur-
+	  sor position.  Brace pairs can nest.
+
+%(x.true-text.false-text)
+	  Specifies a ternary expression.  The character fol-
+	  lowing the x is arbitrary; the  same  character  is
+	  used  to  separate  the  text for the `true' result
+	  from that for the `false' result.   This  separator
+	  may  not appear in the true-text, except as part of
+	  a %-escape sequence.   A  `)'  may  appear  in  the
+	  false-text  as  `%)'.  true-text and false-text may
+	  both contain arbitrarily-nested  escape  sequences,
+	  including further ternary expressions.
+
+	  The left parenthesis may be preceded or followed by
+	  a positive integer n, which defaults  to  zero.   A
+	  negative  integer  will  be  multiplied by -1.  The
+	  test character x may be any of the following:
+
+	  c
+	  .
+	  ~      True  if  the  current  path,  with   prefix
+			 replacement, has at least n elements.
+	  /
+	  C      True  if  the  current  absolute path has at
+			 least n elements.
+	  t      True if the time in minutes is equal to n.
+	  T      True if the time in hours is equal to n.
+	  d      True if the day of the month is equal to  n.
+	  D      True  if  the month is equal to n (January =
+			 0).
+	  w      True if the day of the week is  equal  to  n
+			 (Sunday = 0).
+	  ?      True  if the exit status of the last command
+			 was n.
+	  #      True if the effective  uid  of  the  current
+			 process is n.
+	  g      True  if  the  effective  gid of the current
+			 process is n.
+	  l      True if at least n characters  have  already
+			 been printed on the current line.
+	  L      True if the SHLVL parameter is at least n.
+	  S      True if the SECONDS parameter is at least n.
+	  v      True if the array psvar has at least n  ele-
+			 ments.
+	  _      True  if  at  least  n shell constructs were
+			 started.
+	  !      True if the shell  is  running  with  privi-
+			 leges.
+
+%<string<
+%>string>
+%[xstring]
+	  Specifies truncation behaviour for the remainder of
+	  the prompt string.  The third, deprecated, form  is
+	  equivalent  to  `%xstringx',  i.e.  x may be `<' or
+	  `>'.  The numeric argument, which in the third form
+	  may appear immediately after the `[', specifies the
+	  maximum permitted length  of  the  various  strings
+	  that  can  be  displayed in the prompt.  The string
+	  will be displayed in place of the truncated portion
+	  of  any  string;  note this does not undergo prompt
+	  expansion.
+
+	  The forms with `<' truncate  at  the  left  of  the
+	  string,  and  the  forms  with  `>' truncate at the
+	  right of the string.  For example, if  the  current
+	  directory  is  `/home/pike',  the prompt `%8<..<%/'
+	  will expand to `..e/pike'.   In  this  string,  the
+	  terminating character (`<', `>' or `]'), or in fact
+	  any character, may be quoted by  a  preceding  `\';
+	  note  when  using print -P, however, that this must
+	  be doubled as the string is also subject  to  stan-
+	  dard  print  processing,  in  addition to any back-
+	  slashes removed by a  double  quoted  string:   the
+	  worst case is therefore `print -P "%<\\\\<<..."'.
+
+	  If  the string is longer than the specified trunca-
+	  tion length, it will  appear  in  full,  completely
+	  replacing the truncated string.
+
+	  The  part of the prompt string to be truncated runs
+	  to the end of the string, or to the end of the next
+	  enclosing  group  of  the `%(' construct, or to the
+	  next truncation encountered at  the  same  grouping
+	  level  (i.e.  truncations  inside  a `%(' are sepa-
+	  rate), which ever comes first.   In  particular,  a
+	  truncation  with  argument  zero (e.g. `%<<') marks
+	  the end of the range of the string to be  truncated
+	  while  turning  off  truncation  from there on. For
+	  example, the prompt '%10<...<%~%<<%# ' will print a
+	  truncated  representation of the current directory,
+	  followed by a `%' or  `#',  followed  by  a  space.
+	  Without  the  `%<<',  those two characters would be
+	  included in the string to be truncated.
+
+%c
+%.
+%C     Trailing component of $PWD.  An integer may  follow
+	  the  `%'  to  get  more than one component.  Unless
+	  `%C' is used, tilde contraction is performed first.
+	  These are deprecated as %c and %C are equivalent to
+	  %1~ and %1/, respectively, while explicit  positive
+	  integers have the same effect as for the latter two
+	  sequences.
