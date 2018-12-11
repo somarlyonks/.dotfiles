@@ -21,8 +21,8 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
   git
   zsh-autosuggestions
-  zsh-syntax-highlighting
 )
+#   zsh-syntax-highlighting
 
 #source ~/.oh-my-zsh/plugins/incr/incr-0.2.zsh
 source $ZSH/oh-my-zsh.sh

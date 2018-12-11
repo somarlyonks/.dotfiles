@@ -6,7 +6,7 @@ Oh-my-zsh
 
 [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md)
 
-[zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
+`git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
 
 ## Theme
 
@@ -49,10 +49,3 @@ ctrl + d: EOF
 ## Customization
 
 https://github.com/robbyrussell/oh-my-zsh/wiki/Customization
-
-## Plugins
-
-### zsh-autosuggestion
-
-TODO auto clearify the downloaded files
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
