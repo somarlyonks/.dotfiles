@@ -1,4 +1,4 @@
-# python interactive
+# Python repl
 
 ## usage
 

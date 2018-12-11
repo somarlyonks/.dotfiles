@@ -6,3 +6,6 @@ fishd*
 
 # vsc
 .vscode/settings.json
+
+# python
+*.pyc

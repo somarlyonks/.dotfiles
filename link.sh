@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# deprecated, use utils.py instead
+
 # Show a quick help summary.
 function usage {
 	echo "Usage: $(basename "$0")";
