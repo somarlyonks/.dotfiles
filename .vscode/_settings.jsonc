@@ -8,7 +8,9 @@
     "*.vue": "vue",
     "*.rkt": "lisp",
     "*.ss": "lisp",
-    "*.ml": "ocaml"
+    "*.ml": "ocaml",
+    "system_error": "c",
+    "type_traits": "c"
   },
   "git.autofetch": true,
   "editor.insertSpaces": true,
@@ -111,28 +113,14 @@
   "[jsonc]": {
     "editor.tabSize": 2
   },
-  "[haskell]": {
-    "editor.fontFamily": "Fira Code",
-    "editor.fontLigatures": true
-  },
-  "[ocaml]": {
-    "editor.fontFamily": "Fira Code",
-    "editor.fontLigatures": true
-  },
-  "[idris]": {
-    "editor.fontFamily": "Fira Code",
-    "editor.fontLigatures": true
-  },
   "window.menuBarVisibility": "toggle",
   "editor.fontFamily": "CamingoCode, 'Droid Sans Fallback'",
   // "go.gopath": "/home/sy/go",
-  "languageServerHaskell.hieExecutablePath": "/home/sy/.local/bin/hie",
   "breadcrumbs.enabled": false,
   "breadcrumbs.filePath": "on",
   "breadcrumbs.symbolPath": "off",
   "window.enableMenuBarMnemonics": false,
   "gitlens.settings.mode": "advanced",
-  "gitlens.resultsExplorer.location": "explorer",
   "gitlens.codeLens.authors.enabled": false,
   "gitlens.codeLens.enabled": false,
   "gitlens.advanced.messages": {
@@ -140,7 +128,6 @@
     "suppressShowKeyBindingsNotice": true,
     "suppressResultsExplorerNotice": true
   },
-  "gitlens.historyExplorer.enabled": true,
   // "tslint.trace.server": "messages",
   "workbench.editor.enablePreview": true,
   "workbench.settings.editor": "json",
@@ -171,5 +158,24 @@
     "tab.inactiveModifiedBorder": "#00896c66",
     "tab.unfocusedActiveModifiedBorder": "#00896c66",
     "tab.unfocusedInactiveModifiedBorder": "#00896c66"
-  }
+  },
+  "gitlens.views.fileHistory.enabled": true,
+  "gitlens.views.lineHistory.enabled": true,
+  "gitlens.views.compare.location": "explorer",
+  "gitlens.views.search.location": "explorer",
+  "workbench.startupEditor": "none",
+  // // workspace specific extension language services
+  // "[haskell]": {
+  //   "editor.fontFamily": "Fira Code",
+  //   "editor.fontLigatures": true
+  // },
+  // "[ocaml]": {
+  //   "editor.fontFamily": "Fira Code",
+  //   "editor.fontLigatures": true
+  // },
+  // "[idris]": {
+  //   "editor.fontFamily": "Fira Code",
+  //   "editor.fontLigatures": true
+  // },
+  // "languageServerHaskell.hieExecutablePath": "/home/sy/.local/bin/hie",
 }
