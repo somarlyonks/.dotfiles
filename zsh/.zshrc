@@ -2,7 +2,8 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cabal/bin:$PATH
 
-export ZSH=/home/sy/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
+export ZSH_CUSTOM=$HOME/.dotfiles/zsh
 
 ZSH_THEME="sy-arrow"
 
