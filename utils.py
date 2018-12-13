@@ -46,7 +46,7 @@ LOCATIONS_MAP = {
         '.pythonrc': ['+', '~', '.pythonrc.py']
     },
     'tmux': {
-        '.tmux.conf': [r'source-file "${HOME}/.dotfiles/.tmux.conf"', '~', '.tmux.conf']
+        '.tmux.conf': [r'source-file "${HOME}/.dotfiles/tmux/.tmux.conf"', '~', '.tmux.conf']
     },
     'zsh': {
         '.zshrc': ['source $HOME/.dotfiles/zsh/.zshrc', '~', '.zshrc']

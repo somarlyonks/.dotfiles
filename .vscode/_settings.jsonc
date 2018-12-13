@@ -164,6 +164,7 @@
   "gitlens.views.compare.location": "explorer",
   "gitlens.views.search.location": "explorer",
   "workbench.startupEditor": "none",
+  "window.titleBarStyle": "native",
   // // workspace specific extension language services
   // "[haskell]": {
   //   "editor.fontFamily": "Fira Code",
