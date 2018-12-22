@@ -115,7 +115,6 @@
   },
   "window.menuBarVisibility": "toggle",
   "editor.fontFamily": "CamingoCode, 'Droid Sans Fallback'",
-  // "go.gopath": "/home/sy/go",
   "breadcrumbs.enabled": false,
   "breadcrumbs.filePath": "on",
   "breadcrumbs.symbolPath": "off",
@@ -123,6 +122,10 @@
   "gitlens.settings.mode": "advanced",
   "gitlens.codeLens.authors.enabled": false,
   "gitlens.codeLens.enabled": false,
+  "gitlens.views.fileHistory.enabled": true,
+  "gitlens.views.lineHistory.enabled": true,
+  "gitlens.views.compare.location": "explorer",
+  "gitlens.views.search.location": "explorer",
   "gitlens.advanced.messages": {
     "suppressFileNotUnderSourceControlWarning": true,
     "suppressShowKeyBindingsNotice": true,
@@ -144,7 +147,6 @@
   "markdown.preview.scrollPreviewWithEditor": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "vsicons.dontShowNewVersionMessage": true,
-  // "editor.minimap.enabled": false,
   // "markdown.styles": [".vscode/markdown.css"],
   "powermode.enabled": true,
   "powermode.enableShake": false,
@@ -153,18 +155,18 @@
   "workbench.colorTheme": "syme",
   "terminal.integrated.rendererType": "dom",
   "workbench.editor.highlightModifiedTabs": true,
-  "workbench.colorCustomizations": {
-    "tab.activeModifiedBorder": "#00896c",
-    "tab.inactiveModifiedBorder": "#00896c66",
-    "tab.unfocusedActiveModifiedBorder": "#00896c66",
-    "tab.unfocusedInactiveModifiedBorder": "#00896c66"
-  },
-  "gitlens.views.fileHistory.enabled": true,
-  "gitlens.views.lineHistory.enabled": true,
-  "gitlens.views.compare.location": "explorer",
-  "gitlens.views.search.location": "explorer",
   "workbench.startupEditor": "none",
-  "window.titleBarStyle": "native",
+  "workbench.activityBar.visible": true,
+  "editor.minimap.enabled": false,
+  "window.titleBarStyle": "custom",
+  "python.linting.enabled": false,
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "vue"
+  ],
+  "debug.allowBreakpointsEverywhere": false,
   // // workspace specific extension language services
   // "[haskell]": {
   //   "editor.fontFamily": "Fira Code",
@@ -179,4 +181,5 @@
   //   "editor.fontLigatures": true
   // },
   // "languageServerHaskell.hieExecutablePath": "/home/sy/.local/bin/hie",
+  // "go.gopath": "/home/sy/go",
 }

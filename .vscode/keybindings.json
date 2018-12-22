@@ -530,4 +530,18 @@
     "key": "ctrl+alt+y",
     "command": "idris.proof-search"
   },
+  {
+    "key": "shift+enter",
+    "command": "-python.datascience.runcurrentcelladvance",
+    "when": "editorFocus && python.datascience.featureenabled && python.datascience.hascodecells"
+  },
+  {
+    "key": "shift+enter",
+    "command": "-python.execSelectionInTerminal",
+    "when": "editorFocus && !findInputFocussed && !python.datascience.hascodecells && !replaceInputFocussed && editorLangId == 'python'"
+  },
+  {
+    "key": "ctrl+alt+m",
+    "command": "editor.action.toggleMinimap"
+  }
 ]
