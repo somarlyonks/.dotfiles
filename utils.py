@@ -3,6 +3,8 @@
 Simulated shell commands for campatibilities
 """
 
+from __future__ import print_function
+
 import inspect
 import os
 import shutil
@@ -15,32 +17,30 @@ import datetime
 HOME = os.getenv('HOME')
 
 """
-laction map schema: {
+location map schema: {
     <dotfile cluster>: {
         <file name>: [<operand>, <...path>]
     }
 }
 
-operands: +         for create file(backup&override if exists)
-          otherwise means append contents to the target path file
+operands: +          file to create(backup & override if exists)
+          otherwise  means appending contents to the target path file
 """
 LOCATIONS_MAP = {
     'vscode': {  # TODO complicated
         #
     },
-    'bash': {  # deprecated
+    'bash': {  # deprecated: leave bash alone
         # '.bashrc': {},
         # '.bash_profile': {},
         # '.bash_aliases': {}
     },
-    'fish': {  # deprecated
-        #
-    },
     'ghci': {
         'ghci.conf': ['+', '~', '.ghc/ghci.conf']
     },
-    'git': {  # TODO complicated
-        #
+    'git': {
+        '.gitconfig': ['+', '~', '.gitconfig'],
+        '.ssh.config': ['+', '~', '.ssh/', 'config']
     },
     'python': {
         '.pythonrc': ['+', '~', '.pythonrc.py']
@@ -105,10 +105,11 @@ def processer(operand, path, cluster_name, target_name):
     if operand == '+':
         if os.path.exists(path):
             datehash = datetime.datetime.now().isoformat()
-            os.rename(path, path + datehash + '.backup')
+            os.rename(path, path + '.' + datehash + '.backup')
         content = open(os.path.join(os.curdir, cluster_name, target_name), 'rt').readlines()
         with open(path, 'wt') as f:
             f.writelines(content)
+        return
     if not os.path.exists(path):
         with open(path, 'wt') as f:
             pass
@@ -146,5 +147,4 @@ def main(fn):
 
 @main
 def _main():
-    print(1)
-    # worker()
+    worker()
