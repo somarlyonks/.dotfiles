@@ -113,6 +113,9 @@
   "[jsonc]": {
     "editor.tabSize": 2
   },
+  "[todo]": {
+    "editor.tabSize": 2
+  },
   "window.menuBarVisibility": "toggle",
   "editor.fontFamily": "CamingoCode, 'Droid Sans Fallback'",
   "breadcrumbs.enabled": false,
@@ -120,12 +123,13 @@
   "breadcrumbs.symbolPath": "off",
   "window.enableMenuBarMnemonics": false,
   "gitlens.settings.mode": "advanced",
+  "gitlens.keymap": "none",
   "gitlens.codeLens.authors.enabled": false,
   "gitlens.codeLens.enabled": false,
   "gitlens.views.fileHistory.enabled": true,
   "gitlens.views.lineHistory.enabled": true,
-  "gitlens.views.compare.location": "explorer",
-  "gitlens.views.search.location": "explorer",
+  "gitlens.views.compare.enabled": false,
+  "gitlens.views.search.enabled": false,
   "gitlens.advanced.messages": {
     "suppressFileNotUnderSourceControlWarning": true,
     "suppressShowKeyBindingsNotice": true,
@@ -167,6 +171,16 @@
     "vue"
   ],
   "debug.allowBreakpointsEverywhere": false,
+  "todo.file.defaultContent": "Project:\n  ",
+  "todo.symbols.box": "[ ]",
+  "todo.symbols.done": "[x]",
+  "todo.symbols.cancelled": " X ",
+  "todo.colors.done": "#98c379",
+  "todo.colors.cancelled": "#cb1b45",
+  "todo.colors.code": "#56b6c2",
+  "todo.colors.comment": "#606090",
+  "todo.colors.project": "#66d9ef",
+  "todo.colors.types": { "TODO": "#ffbd2a", "FIXME": "#f06292", "NOTE": "seagreen"}
   // // workspace specific extension language services
   // "[haskell]": {
   //   "editor.fontFamily": "Fira Code",

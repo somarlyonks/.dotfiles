@@ -17,7 +17,7 @@ Make sure in `bash`.
 git clone git@github.com:somarlyonks/.dotfiles.git ~/.dotfiles
 ```
 
-### checkout to new branch
+### checkout to a new branch
 
 ```bash
 cd ~/.dotfiles && gco -b sy-ENVY

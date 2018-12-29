@@ -543,5 +543,88 @@
   {
     "key": "ctrl+alt+m",
     "command": "editor.action.toggleMinimap"
-  }
+  },
+  {
+    "key": "alt+d",
+    "command": "-todo.toggleDone",
+    "when": "editorTextFocus && editorLangId == 'todo'"
+  },
+  {
+    "key": "alt+s",
+    "command": "-todo.toggleStart",
+    "when": "editorTextFocus && editorLangId == 'todo'"
+  },
+  {
+    "key": "alt+c",
+    "command": "-todo.toggleCancelled",
+    "when": "editorTextFocus && editorLangId == 'todo'"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "-todo.toggleBox",
+    "when": "editorTextFocus && editorLangId == 'todo'"
+  },
+  {
+    "key": "ctrl+shift+a",
+    "command": "-todo.archive",
+    "when": "editorTextFocus && editorLangId == 'todo'"
+  },
+  {
+    "key": "ctrl+shift+d",
+    "command": "workbench.view.extension.todo"
+  },
+  {
+    "key": "ctrl+shift+d s",
+    "command": "todo.toggleStart",
+    "when": "editorTextFocus && editorLangId == 'todo'"
+  },
+  {
+    "key": "alt+s",
+    "command": "-todo.toggleStart",
+    "when": "editorTextFocus && editorLangId == 'todo'"
+  },
+  {
+    "key": "ctrl+shift+d",
+    "command": "-workbench.view.debug"
+  },
+  {
+    "key": "ctrl+shift+d d",
+    "command": "todo.toggleDone",
+    "when": "editorTextFocus && editorLangId == 'todo'"
+  },
+  {
+    "key": "alt+d",
+    "command": "-todo.toggleDone",
+    "when": "editorTextFocus && editorLangId == 'todo'"
+  },
+  {
+    "key": "ctrl+shift+d c",
+    "command": "todo.toggleCancelled",
+    "when": "editorTextFocus && editorLangId == 'todo'"
+  },
+  {
+    "key": "alt+c",
+    "command": "-todo.toggleCancelled",
+    "when": "editorTextFocus && editorLangId == 'todo'"
+  },
+  {
+    "key": "ctrl+shift+d b",
+    "command": "todo.toggleBox",
+    "when": "editorTextFocus && editorLangId == 'todo'"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "-todo.toggleBox",
+    "when": "editorTextFocus && editorLangId == 'todo'"
+  },
+  {
+    "key": "ctrl+shift+d a",
+    "command": "todo.archive",
+    "when": "editorTextFocus && editorLangId == 'todo'"
+  },
+  {
+    "key": "ctrl+shift+a",
+    "command": "-todo.archive",
+    "when": "editorTextFocus && editorLangId == 'todo'"
+  },
 ]
