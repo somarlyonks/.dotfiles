@@ -1,24 +1,43 @@
 {
-  "git.confirmSync": false,
-  "files.autoSave": "off",
-  "editor.fontSize": 15,
-  "python.venvPath": "/home/sy/.virtualenvs/venv",
+  "breadcrumbs.enabled": false,
+  "breadcrumbs.filePath": "on",
+  "breadcrumbs.symbolPath": "off",
+
   "window.zoomLevel": 0,
+
+  "debug.allowBreakpointsEverywhere": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.cursorBlinking": "expand",
+  "editor.cursorStyle": "line",
+  "editor.cursorWidth": 3,
+  "editor.detectIndentation": false,
+  "editor.foldingStrategy": "indentation",
+  "editor.fontFamily": "CamingoCode, 'Droid Sans Fallback'",
+  "editor.fontSize": 15,
+  "editor.insertSpaces": true,
+  // "editor.rulers": [80],
+  "editor.snippetSuggestions": "top",
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 4,
+
+  "files.autoSave": "off",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
   "files.associations": {
     "*.vue": "vue",
     "*.rkt": "lisp",
     "*.ss": "lisp",
     "*.ml": "ocaml",
     "system_error": "c",
-    "type_traits": "c"
+    "type_traits": "c",
+    "*.cjson": "jsonc",
+    "*.wxss": "css",
+    "*.wxs": "javascript"
   },
-  "git.autofetch": true,
-  "editor.insertSpaces": true,
-  "python.linting.flake8Enabled": true,
-  "git.promptToSaveFilesBeforeCommit": true,
-  "scm.diffDecorations": "gutter",
-  "editor.cursorStyle": "line",
-  "editor.cursorWidth": 3,
+
   "todohighlight.keywords": [
     {
       "text": "FEAT:",
@@ -68,19 +87,11 @@
     "MD033": false,
     "MD034": false,
   },
-  "diffEditor.ignoreTrimWhitespace": false,
   "python.linting.mypyArgs": [
     "--ignore-missing-imports",
     "--follow-imports=silent"
   ],
-  "editor.foldingStrategy": "indentation",
-  "editor.snippetSuggestions": "top",
-  "git.enableSmartCommit": false,
   "emmet.triggerExpansionOnTab": true,
-  "editor.detectIndentation": false,
-  "editor.tabSize": 4,
-  "editor.cursorBlinking": "expand",
-  "editor.acceptSuggestionOnEnter": "off",
   "explorer.confirmDragAndDrop": false,
   "typescript.tsc.autoDetect": "off",
   "bracketPairColorizer.consecutivePairColors": [
@@ -102,11 +113,7 @@
     "Red"
   ],
   "terminal.integrated.shell.linux": "/bin/zsh",
-  "workbench.iconTheme": "vscode-icons",
   "explorer.confirmDelete": false,
-  "python.linting.flake8Args": [
-    "--max-line-length=120"
-  ],
   "[json]": {
     "editor.tabSize": 2
   },
@@ -116,12 +123,13 @@
   "[todo]": {
     "editor.tabSize": 2
   },
-  "window.menuBarVisibility": "toggle",
-  "editor.fontFamily": "CamingoCode, 'Droid Sans Fallback'",
-  "breadcrumbs.enabled": false,
-  "breadcrumbs.filePath": "on",
-  "breadcrumbs.symbolPath": "off",
-  "window.enableMenuBarMnemonics": false,
+
+  "git.enableSmartCommit": false,
+  "git.promptToSaveFilesBeforeCommit": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "scm.diffDecorations": "gutter",
+
   "gitlens.settings.mode": "advanced",
   "gitlens.keymap": "none",
   "gitlens.codeLens.authors.enabled": false,
@@ -135,9 +143,8 @@
     "suppressShowKeyBindingsNotice": true,
     "suppressResultsExplorerNotice": true
   },
+
   // "tslint.trace.server": "messages",
-  "workbench.editor.enablePreview": true,
-  "workbench.settings.editor": "json",
   "javascript.format.insertSpaceAfterConstructor": true,
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
   "typescript.format.insertSpaceAfterConstructor": true,
@@ -146,31 +153,32 @@
   "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
   "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
   "jsDocCompletion.enabled": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
   "vsicons.presets.hideExplorerArrows": true,
+  "vsicons.dontShowNewVersionMessage": true,
   "markdown.preview.scrollEditorWithPreview": false,
   "markdown.preview.scrollPreviewWithEditor": false,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "vsicons.dontShowNewVersionMessage": true,
   // "markdown.styles": [".vscode/markdown.css"],
   "powermode.enabled": true,
   "powermode.enableShake": false,
   "powermode.enableStatusBarComboTimer": false,
   "powermode.enableStatusBarComboCounter": false,
-  "workbench.colorTheme": "syme",
   "terminal.integrated.rendererType": "dom",
-  "workbench.editor.highlightModifiedTabs": true,
-  "workbench.startupEditor": "none",
-  "workbench.activityBar.visible": true,
-  "editor.minimap.enabled": false,
-  "window.titleBarStyle": "custom",
+
   "python.linting.enabled": false,
+  "python.linting.flake8Args": [
+    "--max-line-length=120"
+  ],
+  "python.linting.flake8Enabled": true,
+  "python.venvPath": "/home/sy/.virtualenvs/venv",
+
   "eslint.autoFixOnSave": true,
   "eslint.validate": [
     "javascript",
     "javascriptreact",
     "vue"
   ],
-  "debug.allowBreakpointsEverywhere": false,
   "todo.file.defaultContent": "Project:\n  ",
   "todo.symbols.box": "[ ]",
   "todo.symbols.done": "[x]",
@@ -180,7 +188,27 @@
   "todo.colors.code": "#56b6c2",
   "todo.colors.comment": "#606090",
   "todo.colors.project": "#66d9ef",
-  "todo.colors.types": { "TODO": "#ffbd2a", "FIXME": "#f06292", "NOTE": "seagreen"}
+  "todo.colors.types": {
+    "TODO": "#ffbd2a",
+    "FIXME": "#f06292",
+    "NOTE": "seagreen"
+  },
+  "emmet.includeLanguages": {
+    "wxml": "html"
+  },
+
+  "window.enableMenuBarMnemonics": false,
+  "window.menuBarVisibility": "toggle",
+  "window.titleBarStyle": "native",
+
+  "workbench.editor.enablePreview": true,
+  "workbench.settings.editor": "json",
+  "workbench.colorTheme": "syme",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.startupEditor": "none",
+  "workbench.activityBar.visible": false,
+  "workbench.panel.defaultLocation": "right"
   // // workspace specific extension language services
   // "[haskell]": {
   //   "editor.fontFamily": "Fira Code",

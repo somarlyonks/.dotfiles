@@ -627,4 +627,18 @@
     "command": "-todo.archive",
     "when": "editorTextFocus && editorLangId == 'todo'"
   },
+  {
+    "key": "ctrl+shift+m",
+    "command": "-workbench.actions.view.problems"
+  },
+  {
+    "key": "alt+m",
+    "command": "center-editor-window.center",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "-center-editor-window.center",
+    "when": "editorTextFocus"
+  },
 ]
