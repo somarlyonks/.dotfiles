@@ -1,7 +1,8 @@
 {
 	"recommendations": [
     // shared
-		"CoenraadS.bracket-pair-colorizer",
+    "CoenraadS.bracket-pair-colorizer",
+    "kaiwood.center-editor-window",
     "mikestead.dotenv",
     "tobermory.es6-string-html",
     "dbaeumer.vscode-eslint",
@@ -10,13 +11,14 @@
     "perragnaredin.light-plus-tweaked",
     "DavidAnson.vscode-markdownlint",
     "hoovercj.vscode-power-mode",
+    "rebornix.project-snippets",
     "ms-python.python",
     "sy.syme",
     "wayou.vscode-todo-highlight",
     "fabiospampinato.vscode-todo-plus",
     "eg2.tslint",
     "robertohuertasm.vscode-icons"
-    // workspace specific
+    // // workspace specific
     // "ms-vscode.cpptools",
     // "ms-vscode.go",
     // "alanz.vscode-hie-server",

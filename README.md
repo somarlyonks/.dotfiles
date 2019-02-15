@@ -7,6 +7,8 @@ sy
 - ~~[powerline/fonts](https://github.com/powerline/fonts): Droid Sans Mono for Powerline Regular.~~(depreated)
 - [CamingoCode](https://www.fontsquirrel.com/fonts/camingocode): CamingoCode font for vscode.
 
+test texts: 1il7L uvw wW gpq9 2Zz 5Ss oO08 nnmrn
+
 ## Usage
 
 Make sure in `bash`.
