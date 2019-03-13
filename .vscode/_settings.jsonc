@@ -3,8 +3,6 @@
   "breadcrumbs.filePath": "on",
   "breadcrumbs.symbolPath": "off",
 
-  "window.zoomLevel": 0,
-
   "debug.allowBreakpointsEverywhere": false,
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.acceptSuggestionOnCommitCharacter": false,
@@ -35,7 +33,13 @@
     "type_traits": "c",
     "*.cjson": "jsonc",
     "*.wxss": "css",
-    "*.wxs": "javascript"
+    "*.acss": "scss",
+    "*.wxs": "javascript",
+    "*.wjs": "javascript",
+    "*.sjs": "javascript",
+    "*.wxml": "html",
+    "*.swan": "html",
+    "*.axml": "html"
   },
 
   "todohighlight.keywords": [
@@ -113,12 +117,16 @@
     "Red"
   ],
   "terminal.integrated.shell.linux": "/bin/zsh",
+  "terminal.integrated.shell.windows": "C:\\windows\\System32\\wsl.exe",
   "explorer.confirmDelete": false,
   "[json]": {
     "editor.tabSize": 2
   },
   "[jsonc]": {
     "editor.tabSize": 2
+  },
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false,
   },
   "[todo]": {
     "editor.tabSize": 2
@@ -152,7 +160,7 @@
   "typescript.format.insertSpaceAfterTypeAssertion": true,
   "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
   "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
-  "jsDocCompletion.enabled": false,
+  "javascript.suggest.completeJSDocs": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
 
   "vsicons.presets.hideExplorerArrows": true,
@@ -171,7 +179,7 @@
     "--max-line-length=120"
   ],
   "python.linting.flake8Enabled": true,
-  "python.venvPath": "/home/sy/.virtualenvs/venv",
+  "python.venvPath": "/home/sy/.pyenv/versions",
 
   "eslint.autoFixOnSave": true,
   "eslint.validate": [
@@ -200,6 +208,7 @@
   "window.enableMenuBarMnemonics": false,
   "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "native",
+  "window.zoomLevel": 0,
 
   "workbench.editor.enablePreview": true,
   "workbench.settings.editor": "json",
@@ -209,19 +218,4 @@
   "workbench.startupEditor": "none",
   "workbench.activityBar.visible": false,
   "workbench.panel.defaultLocation": "right"
-  // // workspace specific extension language services
-  // "[haskell]": {
-  //   "editor.fontFamily": "Fira Code",
-  //   "editor.fontLigatures": true
-  // },
-  // "[ocaml]": {
-  //   "editor.fontFamily": "Fira Code",
-  //   "editor.fontLigatures": true
-  // },
-  // "[idris]": {
-  //   "editor.fontFamily": "Fira Code",
-  //   "editor.fontLigatures": true
-  // },
-  // "languageServerHaskell.hieExecutablePath": "/home/sy/.local/bin/hie",
-  // "go.gopath": "/home/sy/go",
 }
