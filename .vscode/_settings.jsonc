@@ -12,7 +12,7 @@
   "editor.cursorWidth": 3,
   "editor.detectIndentation": false,
   "editor.foldingStrategy": "indentation",
-  "editor.fontFamily": "CamingoCode, 'Droid Sans Fallback'",
+  "editor.fontFamily": "CamingoCode, consolas, 'Droid Sans Fallback'",
   "editor.fontSize": 15,
   "editor.insertSpaces": true,
   // "editor.rulers": [80],
@@ -39,7 +39,19 @@
     "*.sjs": "javascript",
     "*.wxml": "html",
     "*.swan": "html",
-    "*.axml": "html"
+    "*.axml": "html",
+    ".pylintrc": "shellscript"
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/*.po": true,
+    "**/*.ibc": true,
+    "**/*.pyc": true,
+    "**/__pycache__": true,
   },
 
   "todohighlight.keywords": [
@@ -65,17 +77,7 @@
       "backgroundColor": "darkviolet"
     }
   ],
-  "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
-    "**/*.po": true,
-    "**/*.ibc": true,
-    "**/*.pyc": true,
-    "**/__pycache__": true,
-  },
+
   "search.exclude": {
     "**/node_modules": true,
     "**/bower_components": true,
@@ -165,6 +167,13 @@
 
   "vsicons.presets.hideExplorerArrows": true,
   "vsicons.dontShowNewVersionMessage": true,
+  "vsicons.associations.files": [
+    {
+      "icon": "python",
+      "extensions": [".python-version", ".pylintrc"],
+      "filename": true
+    }
+  ],
   "markdown.preview.scrollEditorWithPreview": false,
   "markdown.preview.scrollPreviewWithEditor": false,
   // "markdown.styles": [".vscode/markdown.css"],
@@ -174,11 +183,16 @@
   "powermode.enableStatusBarComboCounter": false,
   "terminal.integrated.rendererType": "dom",
 
-  "python.linting.enabled": false,
+  "python.linting.enabled": true,
   "python.linting.flake8Args": [
     "--max-line-length=120"
   ],
   "python.linting.flake8Enabled": true,
+  // "python.linting.pep8Enabled": true,
+  // "python.linting.pylintEnabled": false,
+  "python.linting.pylintArgs": [
+    "--disable-relative-beyond-top-level"
+  ],
   "python.venvPath": "/home/sy/.pyenv/versions",
 
   "eslint.autoFixOnSave": true,
@@ -209,6 +223,7 @@
   "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "native",
   "window.zoomLevel": 0,
+  "window.newWindowDimensions": "maximized",
 
   "workbench.editor.enablePreview": true,
   "workbench.settings.editor": "json",
@@ -217,5 +232,6 @@
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.startupEditor": "none",
   "workbench.activityBar.visible": false,
-  "workbench.panel.defaultLocation": "right"
+  "workbench.panel.defaultLocation": "right",
+  "extensions.ignoreRecommendations": false
 }

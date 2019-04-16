@@ -110,16 +110,6 @@
     "when": "!editorFocus && !searchViewletVisible"
   },
   {
-    "key": "capslock",
-    "command": "extension.vim_tab",
-    "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
-  },
-  {
-    "key": "tab",
-    "command": "-extension.vim_tab",
-    "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
-  },
-  {
     "key": "ctrl+enter",
     "command": "-python.execSelectionInTerminal",
     "when": "editorFocus && editorHasSelection && editorLangId == 'python'"
@@ -228,16 +218,6 @@
     "when": "terminalFindWidgetVisible && terminalFocus"
   },
   {
-    "key": "down",
-    "command": "-repl.action.historyNext",
-    "when": "inDebugRepl && onLastDebugReplLine"
-  },
-  {
-    "key": "up",
-    "command": "-repl.action.historyPrevious",
-    "when": "inDebugRepl && onFirstDebugReplLine"
-  },
-  {
     "key": "ctrl+j",
     "command": "-workbench.action.togglePanel"
   },
@@ -284,11 +264,6 @@
   {
     "key": "ctrl+numpad0",
     "command": "-workbench.action.zoomReset"
-  },
-  {
-    "key": "alt+n",
-    "command": "emacs.cursorPageDown",
-    "when": "editorTextFocus && !suggestWidgetVisible"
   },
   {
     "key": "ctrl+s",
@@ -640,10 +615,6 @@
     "when": "editorFocus"
   },
   {
-    "key": "ctrl+shift+l",
-    "command": "workbench.view.extension.leetcode"
-  },
-  {
     "key": "ctrl+shift+k",
     "command": "-editor.action.deleteLines",
     "when": "textInputFocus && !editorReadonly"
@@ -683,11 +654,11 @@
     "command": "bookmarks.jumpToPrevious",
     "when": "editorTextFocus"
   },
-  {
-    "key": "ctrl+shift+b",
-    "command": "workbench.view.extension.bookmarks",
-    "when": "activeViewlet != 'workbench.view.extension.bookmarks'"
-  },
+  // {
+  //   "key": "ctrl+shift+b",
+  //   "command": "workbench.view.extension.bookmarks",
+  //   "when": "activeViewlet != 'workbench.view.extension.bookmarks'"
+  // },
   {
     "key": "ctrl+alt+j",
     "command": "-bookmarks.jumpToPrevious",
@@ -696,5 +667,20 @@
   {
     "key": "ctrl+shift+w",
     "command": "-workbench.action.closeWindow"
+  },
+  {
+    "key": "shift+enter",
+    "command": "-python.datascience.runcurrentcelladvance",
+    "when": "editorFocus && python.datascience.featureenabled && python.datascience.hascodecells && !editorHasSelection"
+  },
+  {
+    "key": "shift+enter",
+    "command": "-python.datascience.execSelectionInteractive",
+    "when": "editorFocus && python.datascience.featureenabled && python.datascience.ownsSelection && !findInputFocussed && !replaceInputFocussed && editorLangId == 'python'"
+  },
+  {
+    "key": "shift+enter",
+    "command": "-python.execSelectionInTerminal",
+    "when": "editorFocus && !findInputFocussed && !python.datascience.ownsSelection && !replaceInputFocussed && editorLangId == 'python'"
   },
 ]
