@@ -24,6 +24,8 @@
 
 ## Environments
 
+### Manjaro (Arch)
+
 If VSCode is running in flatpak, it's recommanded to upgrade flatpak to v1+ which has better support for portals with a new tool called `flatpak-spawn`.
 
 Run VSCode in host with commands like
@@ -55,16 +57,8 @@ chmod u+x ~/.zsh_spawn
 
 And in VSCode, edit the setting `terminal.integrated.shell.linux` to `/home/<username>/.zsh_spawn`. Then, the integrated terminal will work just like native konsole/gnome-terminal.
 
-### tested environment:
+### Windows (10)
 
-  Manjaro 17.1.12
+To run git in wsl instead of git for Windows.
 
-  x86_64 kernel 4.14.67-1
-
-  flatpak v1.0.1
-
-  vscode v1.27.1
-
-### found problems
-
-There appears a readline problem and backspace/left/right .etc may not work as expected in zsh but work in bash.
+@see gist [git.wsl](https://gist.github.com/somarlyonks/f0f81644b59271473c14dfc2d226c8cc)

@@ -1,3 +1,5 @@
+// @see https://code.visualstudio.com/docs/getstarted/keybindings#_when-clause-contexts
+
 [
   // q
   {
@@ -108,16 +110,6 @@
     "when": "!editorFocus && !searchViewletVisible"
   },
   {
-    "key": "capslock",
-    "command": "extension.vim_tab",
-    "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
-  },
-  {
-    "key": "tab",
-    "command": "-extension.vim_tab",
-    "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
-  },
-  {
     "key": "ctrl+enter",
     "command": "-python.execSelectionInTerminal",
     "when": "editorFocus && editorHasSelection && editorLangId == 'python'"
@@ -226,16 +218,6 @@
     "when": "terminalFindWidgetVisible && terminalFocus"
   },
   {
-    "key": "down",
-    "command": "-repl.action.historyNext",
-    "when": "inDebugRepl && onLastDebugReplLine"
-  },
-  {
-    "key": "up",
-    "command": "-repl.action.historyPrevious",
-    "when": "inDebugRepl && onFirstDebugReplLine"
-  },
-  {
     "key": "ctrl+j",
     "command": "-workbench.action.togglePanel"
   },
@@ -282,11 +264,6 @@
   {
     "key": "ctrl+numpad0",
     "command": "-workbench.action.zoomReset"
-  },
-  {
-    "key": "alt+n",
-    "command": "emacs.cursorPageDown",
-    "when": "editorTextFocus && !suggestWidgetVisible"
   },
   {
     "key": "ctrl+s",
@@ -510,10 +487,6 @@
     "command": "-workbench.action.tasks.build"
   },
   {
-    "key": "ctrl+shift+b",
-    "command": "breadcrumbs.toggle"
-  },
-  {
     "key": "ctrl+alt+a",
     "command": "idris.add-clause"
   },
@@ -608,11 +581,6 @@
     "when": "editorTextFocus && editorLangId == 'todo'"
   },
   {
-    "key": "ctrl+shift+d b",
-    "command": "todo.toggleBox",
-    "when": "editorTextFocus && editorLangId == 'todo'"
-  },
-  {
     "key": "ctrl+enter",
     "command": "-todo.toggleBox",
     "when": "editorTextFocus && editorLangId == 'todo'"
@@ -640,5 +608,79 @@
     "key": "ctrl+l",
     "command": "-center-editor-window.center",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+l",
+    "command": "-editor.action.selectHighlights",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "-editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+b b",
+    "command": "bookmarks.toggle",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+k",
+    "command": "-bookmarks.toggle",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+g shift+b",
+    "command": "-gitlens.toggleCodeLens",
+    "when": "editorTextFocus && gitlens:canToggleCodeLens && gitlens:enabled && config.gitlens.keymap == 'chorded'"
+  },
+  {
+    "key": "ctrl+shift+g b",
+    "command": "-gitlens.toggleFileBlame",
+    "when": "editorTextFocus && config.gitlens.keymap == 'chorded' && gitlens:activeFileStatus =~ /blameable/"
+  },
+  {
+    "key": "ctrl+shift+b n",
+    "command": "bookmarks.jumpToNext",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+l",
+    "command": "-bookmarks.jumpToNext",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+b p",
+    "command": "bookmarks.jumpToPrevious",
+    "when": "editorTextFocus"
+  },
+  // {
+  //   "key": "ctrl+shift+b",
+  //   "command": "workbench.view.extension.bookmarks",
+  //   "when": "activeViewlet != 'workbench.view.extension.bookmarks'"
+  // },
+  {
+    "key": "ctrl+alt+j",
+    "command": "-bookmarks.jumpToPrevious",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+w",
+    "command": "-workbench.action.closeWindow"
+  },
+  {
+    "key": "shift+enter",
+    "command": "-python.datascience.runcurrentcelladvance",
+    "when": "editorFocus && python.datascience.featureenabled && python.datascience.hascodecells && !editorHasSelection"
+  },
+  {
+    "key": "shift+enter",
+    "command": "-python.datascience.execSelectionInteractive",
+    "when": "editorFocus && python.datascience.featureenabled && python.datascience.ownsSelection && !findInputFocussed && !replaceInputFocussed && editorLangId == 'python'"
+  },
+  {
+    "key": "shift+enter",
+    "command": "-python.execSelectionInTerminal",
+    "when": "editorFocus && !findInputFocussed && !python.datascience.ownsSelection && !replaceInputFocussed && editorLangId == 'python'"
   },
 ]
