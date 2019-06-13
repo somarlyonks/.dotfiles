@@ -32,14 +32,6 @@
     "system_error": "c",
     "type_traits": "c",
     "*.cjson": "jsonc",
-    "*.wxss": "css",
-    "*.acss": "scss",
-    "*.wxs": "javascript",
-    "*.wjs": "javascript",
-    "*.sjs": "javascript",
-    "*.wxml": "html",
-    "*.swan": "html",
-    "*.axml": "html",
     ".pylintrc": "shellscript"
   },
   "files.exclude": {
@@ -81,7 +73,6 @@
   "search.exclude": {
     "**/node_modules": true,
     "**/bower_components": true,
-    "**/static": true
   },
   "markdownlint.config": {
     "MD003": false,
@@ -156,9 +147,9 @@
 
   // "tslint.trace.server": "messages",
   "javascript.format.insertSpaceAfterConstructor": true,
-  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
   "typescript.format.insertSpaceAfterConstructor": true,
-  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
   "typescript.format.insertSpaceAfterTypeAssertion": true,
   "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
   "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
@@ -181,8 +172,9 @@
   "powermode.enableShake": false,
   "powermode.enableStatusBarComboTimer": false,
   "powermode.enableStatusBarComboCounter": false,
-  "terminal.integrated.rendererType": "dom",
+  "terminal.integrated.rendererType": "canvas",
 
+  "python.jediEnabled": false,
   "python.linting.enabled": true,
   "python.linting.flake8Args": [
     "--max-line-length=120"
@@ -221,7 +213,7 @@
 
   "window.enableMenuBarMnemonics": false,
   "window.menuBarVisibility": "toggle",
-  "window.titleBarStyle": "native",
+  "window.titleBarStyle": "custom",
   "window.zoomLevel": 0,
   "window.newWindowDimensions": "maximized",
 
