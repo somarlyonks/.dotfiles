@@ -19,3 +19,6 @@ function prompt {
 # https://github.com/joonro/Get-ChildItemColor
 Import-Module Get-ChildItemColor
 Set-Alias ls Get-ChildItemColor -option AllScope -Force
+
+# shortcuts
+Set-PSReadlineKeyHandler -Key ctrl+d -Function ViExit
