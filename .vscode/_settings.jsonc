@@ -21,6 +21,7 @@
   "editor.tabSize": 4,
 
   "files.autoSave": "off",
+  "files.eol": "\n",
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "files.trimFinalNewlines": true,
@@ -29,9 +30,10 @@
     "*.rkt": "lisp",
     "*.ss": "lisp",
     "*.ml": "ocaml",
+    "*.cjson": "jsonc",
     "system_error": "c",
     "type_traits": "c",
-    "*.cjson": "jsonc",
+    "tslint.json": "jsonc",
     ".pylintrc": "shellscript"
   },
   "files.exclude": {
@@ -74,6 +76,7 @@
     "**/node_modules": true,
     "**/bower_components": true,
   },
+  // "search.useIgnoreFiles": true,
   "markdownlint.config": {
     "MD003": false,
     "MD004": false,
@@ -90,7 +93,6 @@
   ],
   "emmet.triggerExpansionOnTab": true,
   "explorer.confirmDragAndDrop": false,
-  "typescript.tsc.autoDetect": "off",
   "bracketPairColorizer.consecutivePairColors": [
     "()",
     "[]",
@@ -110,7 +112,6 @@
     "Red"
   ],
   "terminal.integrated.shell.linux": "/bin/zsh",
-  "terminal.integrated.shell.windows": "C:\\windows\\System32\\wsl.exe",
   "explorer.confirmDelete": false,
   "[json]": {
     "editor.tabSize": 2
@@ -119,10 +120,13 @@
     "editor.tabSize": 2
   },
   "[markdown]": {
-    "files.trimTrailingWhitespace": false,
+    "files.trimTrailingWhitespace": false
   },
   "[todo]": {
     "editor.tabSize": 2
+  },
+  "[clojure]": {
+    "editor.rulers": [80]
   },
 
   "git.enableSmartCommit": false,
@@ -131,7 +135,6 @@
   "git.confirmSync": false,
   "scm.diffDecorations": "gutter",
 
-  "gitlens.settings.mode": "advanced",
   "gitlens.keymap": "none",
   "gitlens.codeLens.authors.enabled": false,
   "gitlens.codeLens.enabled": false,
@@ -146,6 +149,7 @@
   },
 
   // "tslint.trace.server": "messages",
+  "typescript.tsc.autoDetect": "off",
   "javascript.format.insertSpaceAfterConstructor": true,
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
   "typescript.format.insertSpaceAfterConstructor": true,
@@ -155,16 +159,8 @@
   "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
   "javascript.suggest.completeJSDocs": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
 
-  "vsicons.presets.hideExplorerArrows": true,
-  "vsicons.dontShowNewVersionMessage": true,
-  "vsicons.associations.files": [
-    {
-      "icon": "python",
-      "extensions": [".python-version", ".pylintrc"],
-      "filename": true
-    }
-  ],
   "markdown.preview.scrollEditorWithPreview": false,
   "markdown.preview.scrollPreviewWithEditor": false,
   // "markdown.styles": [".vscode/markdown.css"],
@@ -175,13 +171,11 @@
   "terminal.integrated.rendererType": "canvas",
 
   "python.jediEnabled": false,
-  "python.linting.enabled": true,
+  "python.linting.enabled": false,
   "python.linting.flake8Args": [
     "--max-line-length=120"
   ],
   "python.linting.flake8Enabled": true,
-  // "python.linting.pep8Enabled": true,
-  // "python.linting.pylintEnabled": false,
   "python.linting.pylintArgs": [
     "--disable-relative-beyond-top-level"
   ],
@@ -213,17 +207,57 @@
 
   "window.enableMenuBarMnemonics": false,
   "window.menuBarVisibility": "toggle",
+  "window.newWindowDimensions": "maximized",
   "window.titleBarStyle": "custom",
   "window.zoomLevel": 0,
-  "window.newWindowDimensions": "maximized",
 
   "workbench.editor.enablePreview": true,
   "workbench.settings.editor": "json",
   "workbench.colorTheme": "syme",
-  "workbench.iconTheme": "vscode-icons",
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.startupEditor": "none",
   "workbench.activityBar.visible": false,
   "workbench.panel.defaultLocation": "right",
-  "extensions.ignoreRecommendations": false
+  "workbench.iconTheme": "vscode-icons",
+  "vsicons.presets.hideExplorerArrows": true,
+  "vsicons.dontShowNewVersionMessage": true,
+  // https://github.com/vscode-icons/vscode-icons/wiki/FineTuning
+  "vsicons.projectDetection.autoReload": false,
+  "vsicons.projectDetection.disableDetect": true,
+  "vsicons.associations.files": [
+    {
+      "icon": "python",
+      "extensions": [".python-version", ".pylintrc"],
+      "filename": true
+    },
+    {
+      "icon": "tsconfig",
+      "extensions": ["tsconfig.tsbuildinfo"],
+      "filename": true
+    }
+  ],
+  "vsicons.associations.folders": [
+    {
+      "icon": "middleware",
+      "extensions": ["middlewares"],
+      "filename": true
+    }
+  ],
+  "extensions.ignoreRecommendations": true,
+
+  // workspace specific extension language services
+  "[haskell]": {
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true
+  },
+  "[ocaml]": {
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true
+  },
+  "[idris]": {
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true
+  },
+  "languageServerHaskell.hieExecutablePath": "/home/sy/.local/bin/hie",
+  "go.gopath": "/home/sy/go",
 }
