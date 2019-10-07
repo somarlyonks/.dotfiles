@@ -110,11 +110,6 @@
     "when": "!editorFocus && !searchViewletVisible"
   },
   {
-    "key": "ctrl+enter",
-    "command": "-python.execSelectionInTerminal",
-    "when": "editorFocus && editorHasSelection && editorLangId == 'python'"
-  },
-  {
     "key": "ctrl+shift+z",
     "command": "-redo",
     "when": "textInputFocus && !editorReadonly"
@@ -283,6 +278,11 @@
   },
   {
     "key": "alt+k",
+    "command": "list.focusUp",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "alt+k",
     "command": "selectPrevSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   },
@@ -307,6 +307,11 @@
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   },
   {
+    "key": "alt+j",
+    "command": "list.focusDown",
+    "when": "listFocus && !inputFocus"
+  },
+  {
     "key": "shift+alt+j",
     "command": "cursorDownSelect",
     "when": "textInputFocus"
@@ -322,14 +327,29 @@
     "when": "textInputFocus"
   },
   {
+    "key": "alt+h",
+    "command": "list.collapse",
+    "when": "listFocus && !inputFocus"
+  },
+  {
     "key": "shift+alt+h",
     "command": "cursorLeftSelect",
     "when": "textInputFocus"
   },
   {
+    "key": "shift+alt+h",
+    "command": "list.collapseAll",
+    "when": "listFocus && !inputFocus"
+  },
+  {
     "key": "alt+l",
     "command": "cursorRight",
     "when": "textInputFocus"
+  },
+  {
+    "key": "alt+l",
+    "command": "list.expand",
+    "when": "listFocus && !inputFocus"
   },
   {
     "key": "shift+alt+l",
@@ -453,13 +473,18 @@
   },
   {
     "key": "alt+c",
+    "command": "leaveSnippet",
+    "when": "editorTextFocus && inSnippetMode && !suggestWidgetVisible"
+  },
+  {
+    "key": "alt+c",
     "command": "-toggleFindCaseSensitive",
     "when": "editorFocus"
   },
   {
     "key": "alt+c",
     "command": "deleteRight",
-    "when": "textInputFocus && !editorReadonly && !suggestWidgetVisible"
+    "when": "textInputFocus && !editorReadonly && !suggestWidgetVisible && !inSnippetMode"
   },
   // v
   {
@@ -502,16 +527,6 @@
   {
     "key": "ctrl+alt+y",
     "command": "idris.proof-search"
-  },
-  {
-    "key": "shift+enter",
-    "command": "-python.datascience.runcurrentcelladvance",
-    "when": "editorFocus && python.datascience.featureenabled && python.datascience.hascodecells"
-  },
-  {
-    "key": "shift+enter",
-    "command": "-python.execSelectionInTerminal",
-    "when": "editorFocus && !findInputFocussed && !python.datascience.hascodecells && !replaceInputFocussed && editorLangId == 'python'"
   },
   {
     "key": "ctrl+alt+m",
@@ -669,21 +684,6 @@
     "command": "-workbench.action.closeWindow"
   },
   {
-    "key": "shift+enter",
-    "command": "-python.datascience.runcurrentcelladvance",
-    "when": "editorFocus && python.datascience.featureenabled && python.datascience.hascodecells && !editorHasSelection"
-  },
-  {
-    "key": "shift+enter",
-    "command": "-python.datascience.execSelectionInteractive",
-    "when": "editorFocus && python.datascience.featureenabled && python.datascience.ownsSelection && !findInputFocussed && !replaceInputFocussed && editorLangId == 'python'"
-  },
-  {
-    "key": "shift+enter",
-    "command": "-python.execSelectionInTerminal",
-    "when": "editorFocus && !findInputFocussed && !python.datascience.ownsSelection && !replaceInputFocussed && editorLangId == 'python'"
-  },
-  {
     "key": "ctrl+alt+-",
     "command": "workbench.action.navigateBack"
   },
@@ -695,4 +695,42 @@
     "key": "alt+right",
     "command": "-workbench.action.navigateForward"
   },
+  {
+    "key": "ctrl+\\",
+    "command": "workbench.action.terminal.split",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+5",
+    "command": "-workbench.action.terminal.split",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "shift+alt+down",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+alt+down",
+    "command": "-editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+
+  // python
+  {
+    "key": "shift+enter",
+    "command": "-python.datascience.runcurrentcelladvance"
+  },
+  {
+    "key": "shift+enter",
+    "command": "-python.datascience.execSelectionInteractive",
+  },
+  {
+    "key": "shift+enter",
+    "command": "-python.execSelectionInTerminal",
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "-python.datascience.runcurrentcell",
+  }
 ]
