@@ -1,4 +1,10 @@
-if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="blue"; fi
+if [ $UID -eq 0 ]; then
+    NCOLOR="red";
+elif [[ -n $SSH_CONNECTION ]]; then
+    NCOLOR="yellow";
+else
+    NCOLOR="blue";
+fi
 
 shrink_path () {
     setopt localoptions
