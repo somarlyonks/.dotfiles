@@ -7,6 +7,9 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.acceptSuggestionOnEnter": "off",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
   "editor.cursorBlinking": "expand",
   "editor.cursorStyle": "line",
   "editor.cursorWidth": 3,
@@ -19,6 +22,8 @@
   "editor.snippetSuggestions": "top",
   "editor.minimap.enabled": false,
   "editor.tabSize": 4,
+  "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?？！，。；“”‘’——《》【】",
+  "editor.suggestSelection": "first",
 
   "files.autoSave": "off",
   "files.eol": "\n",
@@ -43,6 +48,15 @@
     "**/CVS": true,
     "**/.DS_Store": true,
     "**/*.po": true,
+    "**/*.ibc": true,
+    "**/*.pyc": true,
+    "**/__pycache__": true,
+    "**/*.rcgu.o": true,
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
     "**/*.ibc": true,
     "**/*.pyc": true,
     "**/__pycache__": true,
@@ -76,6 +90,8 @@
     "**/node_modules": true,
     "**/bower_components": true,
   },
+  "search.searchOnType": false,
+  "search.searchOnTypeDebouncePeriod": 1000,
   // "search.useIgnoreFiles": true,
   "markdownlint.config": {
     "MD003": false,
@@ -93,6 +109,7 @@
   ],
   "emmet.triggerExpansionOnTab": true,
   "explorer.confirmDragAndDrop": false,
+  "explorer.compactFolders": false,
   "bracketPairColorizer.consecutivePairColors": [
     "()",
     "[]",
@@ -129,10 +146,13 @@
     "editor.rulers": [80]
   },
 
-  "git.enableSmartCommit": false,
-  "git.promptToSaveFilesBeforeCommit": true,
   "git.autofetch": true,
   "git.confirmSync": false,
+  "git.enableSmartCommit": false,
+  "git.ignoredRepositories": [
+    "/home/sy/.pyenv"
+  ],
+  "git.promptToSaveFilesBeforeCommit": "always",
   "scm.diffDecorations": "gutter",
 
   "gitlens.keymap": "none",
@@ -151,12 +171,14 @@
   // "tslint.trace.server": "messages",
   "typescript.tsc.autoDetect": "off",
   "javascript.format.insertSpaceAfterConstructor": true,
-  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
   "typescript.format.insertSpaceAfterConstructor": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
   "typescript.format.insertSpaceAfterTypeAssertion": true,
-  "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
   "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "javascript.format.semicolons": "remove",
+  "typescript.format.semicolons": "remove",
   "javascript.suggest.completeJSDocs": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -181,7 +203,6 @@
   ],
   "python.venvPath": "/home/sy/.pyenv/versions",
 
-  "eslint.autoFixOnSave": true,
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -245,6 +266,22 @@
   ],
   "extensions.ignoreRecommendations": true,
 
+  "peacock.favoriteColors": [
+    {
+      "name": "Go Cyan",
+      "value": "#5dc9e2"
+    },
+    {
+      "name": "JavaScript Yellow",
+      "value": "#f9e64f"
+    },
+    {
+      "name": "Something Different",
+      "value": "#832561"
+    }
+  ],
+  "peacock.vslsShareColor": "#832561",
+
   // workspace specific extension language services
   "[haskell]": {
     "editor.fontFamily": "Fira Code",
@@ -260,4 +297,11 @@
   },
   "languageServerHaskell.hieExecutablePath": "/home/sy/.local/bin/hie",
   "go.gopath": "/home/sy/go",
+  "C_Cpp.updateChannel": "Insiders",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+    ]
+  },
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "liveshare.showInStatusBar": "whileCollaborating",
 }

@@ -723,14 +723,22 @@
   },
   {
     "key": "shift+enter",
-    "command": "-python.datascience.execSelectionInteractive",
+    "command": "-python.datascience.execSelectionInteractive"
   },
   {
     "key": "shift+enter",
-    "command": "-python.execSelectionInTerminal",
+    "command": "-python.execSelectionInTerminal"
   },
   {
     "key": "ctrl+enter",
-    "command": "-python.datascience.runcurrentcell",
+    "command": "-python.datascience.runcurrentcell"
+  },
+  {
+    "key": "ctrl+k ctrl+s",
+    "command": "-workbench.action.openGlobalKeybindings"
+  },
+  {
+    "key": "ctrl+shift+l",
+    "command": "workbench.view.extension.liveshare"
   }
 ]
