@@ -12,13 +12,14 @@ Oh-my-zsh
 
 A modified minimalist [arrow.zsh-theme](https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/arrow.zsh-theme) original from [oh-my-zsh](http://ohmyz.sh/).
 
-## Chectsheet
+## Cheatsheet
 
 ### cli shortcuts
 
-clt + w: delete all
-ctrl + w: delete word
-ctrl + d: EOF
+alt + w: delete all  
+ctrl + w: delete word  
+ctrl + a: line start  
+ctrl + d: EOF  
 
 ### git shortcuts
 
@@ -49,3 +50,13 @@ ctrl + d: EOF
 ## Customization
 
 https://github.com/robbyrussell/oh-my-zsh/wiki/Customization
+
+## WSL only
+
+### xdg-open
+
+```bash
+export BROWSER="/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe"
+```
+
+In file `/usr/bin/sensible-browser`, update line that reads `${BROWSER} "$1"` to `"${BROWSER}" "$1"`
