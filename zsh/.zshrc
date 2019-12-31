@@ -22,34 +22,39 @@ plugins=(
 )
 #   zsh-syntax-highlighting
 
-#source ~/.oh-my-zsh/plugins/incr/incr-0.2.zsh
+# source ~/.oh-my-zsh/plugins/incr/incr-0.2.zsh
 source $ZSH/oh-my-zsh.sh
 
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
-export PROJECT_HOME=$HOME/Devel
+export PROJECT_HOME=$HOME/Repos
 export TERM="screen-256color"
-
-export JAVA_HOME=/opt/java/jdk
-export JRE_HOME=${JAVA_HOME}/jre
-export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
-export PATH=${JAVA_HOME}/bin:$PATH
-
-export GOPATH=$HOME/go
-
-export WORKON_HOME=$HOME/.virtualenvs
-export PYTHONSTARTUP=$HOME/.pythonrc.py
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 # ssh
 export SSH_KEY_PATH="$HOME/.ssh/id_sy"
 
 # proxy
 export RPOXYCHAINS_SOCKS5=6489
+# export HTTP_PROXY="socks5://127.0.0.1:6489"
+# export HTTPS_PROXY="socks5://127.0.0.1:6489"
+# export FTP_PROXY="socks5://127.0.0.1:6489"
 
-# pyenv
+# JAVA
+export JAVA_HOME=/opt/java/jdk
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+export PATH=${JAVA_HOME}/bin:$PATH
+
+# Go
+export GOPATH=$HOME/go
+
+# C
+# export ARCHFLAGS="-arch x86_64"
+
+# python
+export WORKON_HOME=$HOME/.virtualenvs
+export PYTHONSTARTUP=$HOME/.pythonrc.py
+export PYENV_ROOT=$HOME/.pyenv
 export PATH=$HOME/.pyenv/bin:$PATH
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
