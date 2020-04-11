@@ -201,6 +201,7 @@
   "python.linting.pylintArgs": [
     "--disable-relative-beyond-top-level"
   ],
+  "python.terminal.activateEnvironment": false,
   "python.venvPath": "/home/sy/.pyenv/versions",
 
   "eslint.validate": [
@@ -298,10 +299,17 @@
   "languageServerHaskell.hieExecutablePath": "/home/sy/.local/bin/hie",
   "go.gopath": "/home/sy/go",
   "C_Cpp.updateChannel": "Insiders",
+  "workbench.colorCustomizations": {
+    //
+  },
   "editor.tokenColorCustomizations": {
     "textMateRules": [
+      //
     ]
   },
+  "editor.renderWhitespace": "none",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "liveshare.showInStatusBar": "whileCollaborating",
+  "remote.SSH.useLocalServer": false,
+  "editor.columnSelection": false
 }
