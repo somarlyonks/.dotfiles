@@ -20,7 +20,7 @@ _zsh_autosuggest_enable() {
 
 # Toggle suggestions (enable/disable)
 _zsh_autosuggest_toggle() {
-	if [[ -n "${_ZSH_AUTOSUGGEST_DISABLED+x}" ]]; then
+	if (( ${+_ZSH_AUTOSUGGEST_DISABLED} )); then
 		_zsh_autosuggest_enable
 	else
 		_zsh_autosuggest_disable
@@ -30,15 +30,13 @@ _zsh_autosuggest_toggle() {
 # Clear the suggestion
 _zsh_autosuggest_clear() {
 	# Remove the suggestion
-	unset POSTDISPLAY
+	POSTDISPLAY=
 
 	_zsh_autosuggest_invoke_original_widget $@
 }
 
 # Modify the buffer and get a new suggestion
 _zsh_autosuggest_modify() {
-	emulate -L zsh
-
 	local -i retval
 
 	# Only available in zsh >= 5.4
@@ -49,37 +47,28 @@ _zsh_autosuggest_modify() {
 	local orig_postdisplay="$POSTDISPLAY"
 
 	# Clear suggestion while waiting for next one
-	unset POSTDISPLAY
+	POSTDISPLAY=
 
 	# Original widget may modify the buffer
 	_zsh_autosuggest_invoke_original_widget $@
 	retval=$?
 
+	emulate -L zsh
+
 	# Don't fetch a new suggestion if there's more input to be read immediately
-	if (( $PENDING > 0 )) || (( $KEYS_QUEUED_COUNT > 0 )); then
+	if (( $PENDING > 0 || $KEYS_QUEUED_COUNT > 0 )); then
 		POSTDISPLAY="$orig_postdisplay"
 		return $retval
 	fi
 
-	# Optimize if manually typing in the suggestion
-	if (( $#BUFFER > $#orig_buffer )); then
-		local added=${BUFFER#$orig_buffer}
-
-		# If the string added matches the beginning of the postdisplay
-		if [[ "$added" = "${orig_postdisplay:0:$#added}" ]]; then
-			POSTDISPLAY="${orig_postdisplay:$#added}"
-			return $retval
-		fi
-	fi
-
-	# Don't fetch a new suggestion if the buffer hasn't changed
-	if [[ "$BUFFER" = "$orig_buffer" ]]; then
-		POSTDISPLAY="$orig_postdisplay"
+	# Optimize if manually typing in the suggestion or if buffer hasn't changed
+	if [[ "$BUFFER" = "$orig_buffer"* && "$orig_postdisplay" = "${BUFFER:$#orig_buffer}"* ]]; then
+		POSTDISPLAY="${orig_postdisplay:$(($#BUFFER - $#orig_buffer))}"
 		return $retval
 	fi
 
 	# Bail out if suggestions are disabled
-	if [[ -n "${_ZSH_AUTOSUGGEST_DISABLED+x}" ]]; then
+	if (( ${+_ZSH_AUTOSUGGEST_DISABLED} )); then
 		return $?
 	fi
 
@@ -95,7 +84,7 @@ _zsh_autosuggest_modify() {
 
 # Fetch a new suggestion based on what's currently in the buffer
 _zsh_autosuggest_fetch() {
-	if zpty -t "$ZSH_AUTOSUGGEST_ASYNC_PTY_NAME" &>/dev/null; then
+	if (( ${+ZSH_AUTOSUGGEST_USE_ASYNC} )); then
 		_zsh_autosuggest_async_request "$BUFFER"
 	else
 		local suggestion
@@ -113,13 +102,13 @@ _zsh_autosuggest_suggest() {
 	if [[ -n "$suggestion" ]] && (( $#BUFFER )); then
 		POSTDISPLAY="${suggestion#$BUFFER}"
 	else
-		unset POSTDISPLAY
+		POSTDISPLAY=
 	fi
 }
 
 # Accept the entire suggestion
 _zsh_autosuggest_accept() {
-	local -i max_cursor_pos=$#BUFFER
+	local -i retval max_cursor_pos=$#BUFFER
 
 	# When vicmd keymap is active, the cursor can't move all the way
 	# to the end of the buffer
@@ -127,19 +116,33 @@ _zsh_autosuggest_accept() {
 		max_cursor_pos=$((max_cursor_pos - 1))
 	fi
 
-	# Only accept if the cursor is at the end of the buffer
-	if [[ $CURSOR = $max_cursor_pos ]]; then
-		# Add the suggestion to the buffer
-		BUFFER="$BUFFER$POSTDISPLAY"
-
-		# Remove the suggestion
-		unset POSTDISPLAY
-
-		# Move the cursor to the end of the buffer
-		CURSOR=${#BUFFER}
+	# If we're not in a valid state to accept a suggestion, just run the
+	# original widget and bail out
+	if (( $CURSOR != $max_cursor_pos || !$#POSTDISPLAY )); then
+		_zsh_autosuggest_invoke_original_widget $@
+		return
 	fi
 
+	# Only accept if the cursor is at the end of the buffer
+	# Add the suggestion to the buffer
+	BUFFER="$BUFFER$POSTDISPLAY"
+
+	# Remove the suggestion
+	POSTDISPLAY=
+
+	# Run the original widget before manually moving the cursor so that the
+	# cursor movement doesn't make the widget do something unexpected
 	_zsh_autosuggest_invoke_original_widget $@
+	retval=$?
+
+	# Move the cursor to the end of the buffer
+	if [[ "$KEYMAP" = "vicmd" ]]; then
+		CURSOR=$(($#BUFFER - 1))
+	else
+		CURSOR=$#BUFFER
+	fi
+
+	return $retval
 }
 
 # Accept the entire suggestion and execute it
@@ -148,7 +151,7 @@ _zsh_autosuggest_execute() {
 	BUFFER="$BUFFER$POSTDISPLAY"
 
 	# Remove the suggestion
-	unset POSTDISPLAY
+	POSTDISPLAY=
 
 	# Call the original `accept-line` to handle syntax highlighting or
 	# other potential custom behavior
@@ -190,28 +193,39 @@ _zsh_autosuggest_partial_accept() {
 	return $retval
 }
 
-for action in clear modify fetch suggest accept partial_accept execute enable disable toggle; do
-	eval "_zsh_autosuggest_widget_$action() {
-		local -i retval
+() {
+	typeset -ga _ZSH_AUTOSUGGEST_BUILTIN_ACTIONS
 
-		_zsh_autosuggest_highlight_reset
+	_ZSH_AUTOSUGGEST_BUILTIN_ACTIONS=(
+		clear
+		fetch
+		suggest
+		accept
+		execute
+		enable
+		disable
+		toggle
+	)
 
-		_zsh_autosuggest_$action \$@
-		retval=\$?
+	local action
+	for action in $_ZSH_AUTOSUGGEST_BUILTIN_ACTIONS modify partial_accept; do
+		eval "_zsh_autosuggest_widget_$action() {
+			local -i retval
 
-		_zsh_autosuggest_highlight_apply
+			_zsh_autosuggest_highlight_reset
 
-		zle -R
+			_zsh_autosuggest_$action \$@
+			retval=\$?
 
-		return \$retval
-	}"
-done
+			_zsh_autosuggest_highlight_apply
 
-zle -N autosuggest-fetch _zsh_autosuggest_widget_fetch
-zle -N autosuggest-suggest _zsh_autosuggest_widget_suggest
-zle -N autosuggest-accept _zsh_autosuggest_widget_accept
-zle -N autosuggest-clear _zsh_autosuggest_widget_clear
-zle -N autosuggest-execute _zsh_autosuggest_widget_execute
-zle -N autosuggest-enable _zsh_autosuggest_widget_enable
-zle -N autosuggest-disable _zsh_autosuggest_widget_disable
-zle -N autosuggest-toggle _zsh_autosuggest_widget_toggle
+			zle -R
+
+			return \$retval
+		}"
+	done
+
+	for action in $_ZSH_AUTOSUGGEST_BUILTIN_ACTIONS; do
+		zle -N autosuggest-$action _zsh_autosuggest_widget_$action
+	done
+}

@@ -56,10 +56,11 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PYTHONSTARTUP=$HOME/.pythonrc.py
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$HOME/.pyenv/bin:$PATH
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # alias
 alias curl="noglob curl"
 alias enw="emacs -nw"
-alias vi="nvim"
+# alias vi="nvim"
