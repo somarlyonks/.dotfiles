@@ -28,7 +28,10 @@ source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export PROJECT_HOME=$HOME/Repos
-export TERM="screen-256color"
+# Don't force TERM: Ghostty already provides xterm-ghostty. Overriding it to
+# screen-256color makes tmux (and therefore pi) treat the outer terminal as a
+# plain screen, which disables OSC 8 hyperlinks and other capabilities.
+# export TERM="screen-256color"
 
 # ssh
 export SSH_KEY_PATH="$HOME/.ssh/id_sy"

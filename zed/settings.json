@@ -1,0 +1,344 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+    "telemetry": {
+        "diagnostics": false,
+        "metrics": false,
+        "anthropic_retention": false
+    },
+    "ssh_connections": [
+        {
+            "host": "yangs-mac-mini.local",
+            "username": "sy",
+            "args": [],
+            "projects": [
+                {
+                    "paths": [
+                        "/Users/sy/Repos/somarlyonks/closerouter"
+                    ]
+                }
+            ]
+        },
+        {
+            "host": "mac.somarl.com",
+            "args": [],
+            "projects": []
+        },
+        {
+            "host": "yangs-mac-mini",
+            "args": [],
+            "projects": []
+        }
+    ],
+    "git": {
+        "file_diff": {
+            "show_full_file": true
+        }
+    },
+    "file_finder": {
+        "include_ignored": "smart",
+    },
+    "cli_default_open_behavior": "new_window",
+    "agent_servers": {
+        "pi-acp": {
+            "default_config_options": {
+                "model": "closerouter/ark/deepseek-v4-flash"
+            },
+            "type": "registry",
+        },
+    },
+    "edit_predictions": {
+        "mode": "eager",
+        "provider": "mercury",
+        "open_ai_compatible_api": {
+            "prediction_debounce": 100,
+            "api_url": "https://yangs-mac-mini.tail22c3e1.ts.net/v1/completions",
+            "model": "omlx/Qwen2.5-Coder-3B-4bit",
+            "prompt_format": "qwen",
+            "max_output_tokens": 64
+        },
+    },
+    "collaboration_panel": {
+        "dock": "right",
+        "button": false,
+    },
+    "icon_theme": "Zed (Default)",
+    "agent_buffer_font_size": 16.0,
+    "agent_ui_font_size": 16.0,
+    "agent": {
+        "notify_when_agent_waiting": "never",
+        "sandbox_permissions": {
+            "allow_unsandboxed": true,
+            "write_paths": [
+                "/Users/sy/.npm",
+                "/tmp",
+                "/Users/sy/Repos/somarlyonks"
+            ],
+            "allow_all_hosts": true
+        },
+        "profiles": {},
+        "default_profile": "write",
+        "default_model": {
+            "speed": "fast",
+            "provider": "closerouter",
+            "model": "ark/deepseek-v4.1-flash",
+            "enable_thinking": false,
+        },
+        "favorite_models": [
+            {
+                "provider": "closerouter",
+                "model": "ark/glm-5.2",
+                "enable_thinking": true
+            },
+            {
+                "provider": "closerouter",
+                "model": "ark/ark-code-latest",
+                "enable_thinking": false
+            },
+            {
+                "provider": "closerouter",
+                "model": "z.ai/glm-5.3-flash",
+                "enable_thinking": false
+            },
+            {
+                "provider": "closerouter",
+                "model": "ark/deepseek-v4-flash",
+                "enable_thinking": false
+            }
+        ],
+        "model_parameters": [],
+        "tool_permissions": {
+            "tools": {
+                "search_web": {
+                    "default": "allow"
+                },
+                "skill": {
+                    "default": "allow",
+                },
+                "terminal": {
+                    "always_allow": [
+                        {
+                            "pattern": "^git\\b"
+                        },
+                        {
+                            "pattern": "^grep\\b"
+                        },
+                        {
+                            "pattern": "^rg\\b"
+                        },
+                        {
+                            "pattern": "^wc\\b"
+                        },
+                        {
+                            "pattern": "^echo\\s+===(\\s|$)"
+                        },
+                        {
+                            "pattern": "^head\\b"
+                        },
+                        {
+                            "pattern": "^find\\s+\\.(\\s|$)"
+                        },
+                        {
+                            "pattern": "^tail\\b"
+                        },
+                        {
+                            "pattern": "^sed\\b"
+                        },
+                        {
+                            "pattern": "^ls\\b"
+                        },
+                        {
+                            "pattern": "^npx\\s+(--yes\\s)?+skills(\\s|$)"
+                        },
+                        {
+                            "pattern": "^npm\\s+test(\\s|$)"
+                        },
+                        {
+                            "pattern": "^npm\\s+run(\\s|$)"
+                        },
+                        {
+                            "pattern": "^npx\\s+eslint(\\s|$)"
+                        }
+                    ],
+                },
+                "delete_path": {
+                    "always_allow": [
+                        {
+                            "pattern": "^logseq/src/main/frontend/extensions/"
+                        },
+                        {
+                            "pattern": "^logseq/src/resources/"
+                        },
+                    ],
+                },
+                "fetch": {
+                    "default": "allow",
+                    "always_allow": [
+                        {
+                            "pattern": "^https?://github\\.com",
+                        },
+                        {
+                            "pattern": "^https?://api\\-docs\\.deepseek\\.com",
+                        },
+                    ],
+                },
+            },
+        },
+    },
+    "session": {
+        "trust_all_worktrees": true,
+    },
+    "project_panel": {
+        "auto_fold_dirs": false,
+        "hide_gitignore": true,
+    },
+    "base_keymap": "VSCode",
+    "preview_tabs": {
+        "enabled": false,
+    },
+    "sticky_scroll": {
+        "enabled": true,
+    },
+    "minimap": {
+        "show": "never",
+    },
+    "cursor_shape": "bar",
+    "cursor_blink": true,
+    "autosave": "off",
+    "remove_trailing_whitespace_on_save": true,
+    "buffer_font_fallbacks": [
+        "Cascadia Code",
+    ],
+    "buffer_font_family": "CamingoCode",
+    "file_types": {
+        "shellscript": [
+            ".pylintrc"
+        ],
+        "lisp": [
+            "*.rkt",
+            "*.ss"
+        ],
+        "ocaml": [
+            "*.ml"
+        ],
+        "html": [
+            "*.underscore"
+        ],
+        "vue": [
+            "*.vue"
+        ],
+        "jsonc": [
+            "*.cjson",
+            "tslint.json"
+        ],
+        "c": [
+            "system_error",
+            "type_traits"
+        ],
+    },
+    "colorize_brackets": true,
+    "show_whitespaces": "selection",
+    "show_edit_predictions": true,
+    "format_on_save": "on",
+    "ensure_final_newline_on_save": true,
+    "hard_tabs": false,
+    "tab_size": 4,
+    "ui_font_size": 16.0,
+    "buffer_font_size": 15.0,
+    "theme": {
+        "mode": "dark",
+        "light": "One Light",
+        "dark": "Syme",
+    },
+    "formatter": "language_server",
+    "languages": {
+        "Markdown": {
+            "show_edit_predictions": false,
+            "remove_trailing_whitespace_on_save": false,
+            "format_on_save": "off",
+        },
+        "Python": {
+            "format_on_save": "off",
+        },
+        "JavaScript": {
+            "formatter": "none",
+            "code_actions_on_format": {
+                "source.fixAll.eslint": true,
+            },
+        },
+        "TypeScript": {
+            "formatter": "none",
+            "code_actions_on_format": {
+                "source.fixAll.eslint": true,
+            },
+        },
+        "Swift": {
+            "format_on_save": "off",
+        },
+    },
+    "language_models": {
+        "openai_compatible": {
+            "closerouter": {
+                "api_url": "https://yangs-mac-mini.tail22c3e1.ts.net/v1",
+                "available_models": [
+                    {
+                        "name": "deepseek/deepseek-flash",
+                        "display_name": "DeepSeek V4.1 Flash",
+                        "max_tokens": 1000000,
+                        "max_output_tokens": 384000,
+                    },
+                    {
+                        "name": "ark/deepseek-v4.1-flash",
+                        "display_name": "DS41F - Ark",
+                        "max_tokens": 1000000,
+                        "max_output_tokens": 384000,
+                    },
+                    {
+                        "name": "ark/glm-5.3",
+                        "display_name": "GLM 5.3",
+                        "max_tokens": 1024000,
+                        "max_output_tokens": 65536,
+                    },
+                    {
+                        "name": "z.ai/glm-5.3-flash",
+                        "display_name": "GLM 5.3 Flash",
+                        "max_tokens": 1024000,
+                    },
+                    {
+                        "name": "cpa/gemini-3.8-flash-high",
+                        "display_name": "Gemini 3.8 Flash - CPA",
+                        "max_tokens": 1024000,
+                    },
+                ]
+            },
+            "crdev": {
+                "api_url": "http://127.0.0.1:6712/v1",
+                "available_models": [
+                    {
+                        "name": "ark/deepseek-v4-flash",
+                        "display_name": "DS4F - Ark",
+                        "max_tokens": 1000000,
+                        "max_output_tokens": 384000,
+                    },
+                ]
+            },
+            "deepseek": {
+                "api_url": "https://api.deepseek.com/v1",
+                "available_models": [
+                    {
+                        "name": "deepseek-flash",
+                        "display_name": "DeepSeek V4.1 Flash",
+                        "max_tokens": 1000000,
+                        "max_output_tokens": 384000,
+                    },
+                ]
+            }
+        },
+    },
+}

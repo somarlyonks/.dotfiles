@@ -1,0 +1,112 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+    {
+        "context": "Workspace",
+        "bindings": {
+            // "shift shift": "file_finder::Toggle"
+        },
+    },
+    {
+        "context": "Editor && vim_mode == insert",
+        "bindings": {
+            // "j k": "vim::NormalBefore"
+        },
+    },
+    {
+        "bindings": {},
+    },
+    // Zed Keymap — Converted from VSCode keybindings
+    // Reference: https://zed.dev/docs/key-bindings
+    // Set "base_keymap": "VSCode" in your settings.json to inherit VSCode defaults.
+    // ======================================================================
+    // WORKSPACE-LEVEL BINDINGS — active everywhere
+    // ======================================================================
+    {
+        "bindings": {
+            // --- Q bindings ---
+            // ctrl+q: Toggle sidebar (VSCode: workbench.action.toggleSidebarVisibility)
+            "ctrl-q": "workspace::ToggleLeftDock",
+            // ctrl+alt+q: Quit application (VSCode: workbench.action.quit)
+            "ctrl-alt-q": "workspace::CloseWindow",
+            // ctrl+shift+q: Toggle activity bar — no direct Zed equivalent
+            // --- Navigation history ---
+            "ctrl-alt--": "pane::GoBack",
+            "ctrl-alt-=": "pane::GoForward",
+            // --- Misc ---
+            "ctrl-alt-m": "editor::ToggleMinimap",
+            "alt-/": "editor::Hover",
+            "ctrl-shift-/": "editor::Hover",
+        },
+    },
+    // ======================================================================
+    // EDITOR BINDINGS — active when editing code
+    // ======================================================================
+    {
+        "context": "Editor && mode == full",
+        "bindings": {
+            // --- HJKL Vim-style cursor movement ---
+            "alt-h": "editor::MoveLeft",
+            "alt-j": "editor::MoveDown",
+            "alt-k": "editor::MoveUp",
+            "alt-l": "editor::MoveRight",
+            "alt-m": "editor::ScrollCursorCenter",
+            // shift+alt+HJKL: Cursor movement + select
+            "shift-alt-h": "editor::SelectLeft",
+            "shift-alt-j": "editor::SelectDown",
+            "shift-alt-k": "editor::SelectUp",
+            "shift-alt-l": "editor::SelectRight",
+            // ctrl+alt+hjkl: Scroll line up/down (approximation)
+            "ctrl-alt-k": "editor::PageUp",
+            "ctrl-alt-j": "editor::PageDown",
+            // --- Word/Line navigation (A/F) ---
+            "alt-a": "editor::MoveToBeginningOfLine",
+            "shift-alt-a": "editor::SelectToBeginningOfLine",
+            "alt-f": "editor::MoveToEndOfLine",
+            "shift-alt-f": "editor::SelectToEndOfLine",
+            // --- Word navigation (S/D) ---
+            "alt-s": "editor::MoveToPreviousWordStart",
+            "shift-alt-s": "editor::SelectToPreviousWordStart",
+            "alt-d": "editor::MoveToNextWordEnd",
+            "shift-alt-d": "editor::SelectToNextWordEnd",
+            // --- Page navigation (B/N) ---
+            "alt-b": "editor::PageUp",
+            "alt-n": "editor::PageDown",
+            "ctrl-alt-b": "editor::PageUp",
+            "ctrl-alt-n": "editor::PageDown",
+            // --- Go To ---
+            "alt-g": "editor::GoToDefinition",
+            "shift-alt-g": "editor::GoToImplementation",
+            // --- Text editing: deletions ---
+            "alt-w": "editor::DeleteToPreviousWordStart",
+            "alt-e": "editor::DeleteToNextWordEnd",
+            "alt-x": "editor::Backspace",
+            "alt-c": "editor::Delete",
+            "alt-z": "editor::DeleteToBeginningOfLine",
+            "alt-v": "editor::DeleteToEndOfLine",
+            // --- Line operations ---
+            "alt-o": "editor::NewlineBelow",
+            "shift-alt-o": "editor::NewlineAbove",
+            "shift-alt-down": "editor::DuplicateLineDown",
+        },
+    },
+    {
+        "context": "Workspace",
+        "unbind": {
+            "cmd-j": "workspace::ToggleBottomDock",
+        },
+        "bindings": {
+            "cmd-`": "workspace::ToggleBottomDock",
+        },
+    },
+    {
+        "bindings": {
+            "alt-cmd-f": "text_finder::Toggle"
+        }
+    }
+]

@@ -82,7 +82,10 @@ fi
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 source /usr/local/bin/virtualenvwrapper.sh
-export TERM="screen-256color"
+# Don't force TERM: Ghostty already provides xterm-ghostty. Overriding it to
+# screen-256color makes tmux (and therefore pi) treat the outer terminal as a
+# plain screen, which disables OSC 8 hyperlinks and other capabilities.
+# export TERM="screen-256color"
 
 
 # set oracle jdk environment
